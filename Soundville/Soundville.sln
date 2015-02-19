@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Web", "Soundville\Soundville.Web.csproj", "{43AB905B-2499-4C1C-8901-1976FC59AF5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Web", "Soundville.Web\Soundville.Web.csproj", "{43AB905B-2499-4C1C-8901-1976FC59AF5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Domain", "Soundville.Domain\Soundville.Domain.csproj", "{5BA42C16-CCA4-4E79-A4A6-006B8BDFBCF9}"
 EndProject

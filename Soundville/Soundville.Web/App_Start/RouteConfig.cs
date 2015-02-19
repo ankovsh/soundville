@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Soundville
+namespace Soundville.Web
 {
     public class RouteConfig
     {

@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace Soundville
+namespace Soundville.Web
 {
     public class BundleConfig
     {
