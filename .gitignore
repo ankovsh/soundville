@@ -1,0 +1,9 @@
+bin
+Debug
+Release
+obj
+_ReSharper.*
+*.user
+*.suo
+*.dbmdl
+packages
