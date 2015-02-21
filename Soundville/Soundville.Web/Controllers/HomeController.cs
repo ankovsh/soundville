@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using Soundville.Presentation.Services;
 using Soundville.Presentation.Services.Interfaces;
 
 namespace Soundville.Web.Controllers
@@ -8,10 +7,9 @@ namespace Soundville.Web.Controllers
     {
         private readonly IUserPresentationService _userPresentationService;
 
-        public HomeController(/*IUserPresentationService userPresentationService*/)
+        public HomeController(IUserPresentationService userPresentationService)
         {
-            //_userPresentationService = userPresentationService;
-            _userPresentationService = new UserPresentationService();
+            _userPresentationService = userPresentationService;
         }
 
         public ViewResult Index()

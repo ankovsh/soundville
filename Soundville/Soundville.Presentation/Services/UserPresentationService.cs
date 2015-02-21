@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Soundville.Domain.Services;
 using Soundville.Domain.Services.Interfaces;
 using Soundville.Presentation.Services.Interfaces;
 
@@ -9,10 +8,9 @@ namespace Soundville.Presentation.Services
     {
         private readonly IUserDomainService _userDomainService;
 
-        public UserPresentationService(/*IUserDomainService userDomainService*/)
+        public UserPresentationService(IUserDomainService userDomainService)
         {
-            /*_userDomainService = userDomainService;*/
-            _userDomainService = new UserDomainService();
+            _userDomainService = userDomainService;
         }
 
         public string GetFirstUserName()

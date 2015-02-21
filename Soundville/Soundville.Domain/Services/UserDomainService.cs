@@ -7,8 +7,8 @@ namespace Soundville.Domain.Services
 {
     public class UserDomainService : DomainService<User>, IUserDomainService
     {
-        public UserDomainService(/*ISoundvilleContext soundvilleContext*/)
-            : base(/*soundvilleContext*/ new SoundvilleContext())
+        public UserDomainService(ISoundvilleContext soundvilleContext)
+            : base(soundvilleContext)
         {
         }
 

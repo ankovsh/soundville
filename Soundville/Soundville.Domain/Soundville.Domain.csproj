@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -49,6 +55,8 @@
     <Compile Include="EntityFramework\Configurations\UserConfiguration.cs" />
     <Compile Include="EntityFramework\ISoundvilleContext.cs" />
     <Compile Include="EntityFramework\SoundvilleContext.cs" />
+    <Compile Include="Installers\DbContextInstaller.cs" />
+    <Compile Include="Installers\DomainServiceInstaller.cs" />
     <Compile Include="Models\Interfaces\IBaseDomainModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
