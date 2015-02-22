@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sounville.Configuration", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Infrastructure", "Soundville.Infrastructure\Soundville.Infrastructure.csproj", "{66CD6ED6-B691-4CD5-B361-B0244A884114}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Soundville.Database", "Soundville.Database\Soundville.Database.sqlproj", "{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{66CD6ED6-B691-4CD5-B361-B0244A884114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66CD6ED6-B691-4CD5-B361-B0244A884114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66CD6ED6-B691-4CD5-B361-B0244A884114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DB8D80-C91B-4332-8D32-863E0CE3FC8A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
