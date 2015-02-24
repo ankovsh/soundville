@@ -1,24 +1,57 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@font-face {
+    font-family: PTSans;
+    src: url(Font/PTS55F.ttf);
+    font-weight: normal;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body {
+    background: url(Images/shattered.png);
+    margin: 0 0 0 0;
+    font-family: PTSans, Arial;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.left-column {
+    width: 30%;
+    height: 1000px;
+    -moz-box-shadow: 0 6px 60px rgba(0,0,0,.65);
+    -webkit-box-shadow: 0 6px 60px rgba(0,0,0,.65);
+    -o-box-shadow: 0 6px 60px rgba(0,0,0,.65);
+    box-shadow: 0 6px 60px rgba(0,0,0,.65);
+    background: url("Images/ligth.jpg") left no-repeat;
+    padding: 0 0 0 0;
+    float: left;
+    position: fixed;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.right-column {
+    width: 70%;
+    height: 1000px;
+    float: right;
+}
+
+.wrap-avatar {
+    padding: 50px;
+    margin: 200px 60px 0 190px;
+    background: url(Images/shattered.png);
+    border-radius: 50%;
+    position: fixed;
+}
+
+.left-column h3 {
+    font-size: 30px;
+    color: #fff5ee;
+    float: right;
+    position: fixed;
+}
+
+button {
+    background: url(Images/shattered.png);
+    width: 123px;
+    height: 40px;
+    cursor: pointer;
+    -moz-border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -o-border-radius: 15%;
+    border-radius: 15%;
+    box-shadow: 0 1px 20px rgba(0, 0, 0, .25);
 }
