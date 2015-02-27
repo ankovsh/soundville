@@ -1,0 +1,94 @@
+﻿.nav {
+    list-style:none;
+    margin:30px;
+    opacity:.4;
+    padding:0;
+    width:50px;
+    font-family: PTSans, Arial;
+    text-transform: uppercase;
+    
+    -moz-transition:opacity .3s ease-in-out;
+    -webkit-transition:opacity .3s ease-in-out;
+    -o-transition:opacity .3s ease-in-out;
+    transition:opacity .3s ease-in-out;
+}
+
+.nav:hover {
+    opacity:.7;
+}
+
+.nav li {
+    height:50px;
+    overflow:hidden;
+    width:50px;
+    
+    -moz-transition:width .2s ease-in-out, height .2s ease-in-out .2s;
+    -webkit-transition:width .2s ease-in-out, height .2s ease-in-out .2s;
+    -o-transition:width .2s ease-in-out, height .2s ease-in-out .2s;
+    transition:width .2s ease-in-out, height .2s ease-in-out .2s;
+}
+
+.nav li:hover {
+    height:130px;
+    width:200px;
+
+    -moz-box-shadow: 0 4px 40px rgba(0,0,0,.45);
+    -webkit-box-shadow: 0 4px 40px rgba(0,0,0,.45);
+    -o-box-shadow: 0 4px 40px rgba(0,0,0,.45);
+    box-shadow: 0 4px 40px rgba(0,0,0,.45);
+}
+
+.nav li a {
+    background:#8b4513;
+    color:#fff;
+    cursor:pointer;
+    display:block;
+    height:40px;
+    line-height:40px;
+    margin:1px;
+    padding-left:15px;
+    width:200px;
+    text-decoration:none;
+
+    -moz-transition:background .2s ease-in-out;
+    -webkit-transition:background .2s ease-in-out;
+    -o-transition:background .2s ease-in-out;
+    transition:background .2s ease-in-out;
+}
+
+.nav li a:hover {
+    background:-moz-linear-gradient(#8b4513, #f4a460);
+    background:-webkit-linear-gradient(#8b4513, #f4a460);
+    background:-o-linear-gradient(#8b4513, #f4a460);
+    background:linear-gradient(#8b4513, #f4a460);
+}
+
+.nav li a:first-child {
+    font-size:1.1em;
+    height:50px;
+    line-height:50px;
+    position:relative;
+    text-indent:36px;
+}
+
+.nav li a:first-child::before {
+    content:'';
+    display:block;
+    height:32px;
+    left:9px;
+    position:absolute;
+    top:9px;
+    width:32px;
+}
+
+.main-menu a:first-child::before {
+    background:url(Images/home.png) center no-repeat;
+}
+
+.station a:first-child::before {
+    background:url(Images/settings.png) center no-repeat;
+}
+
+.about a:first-child::before {
+    background:url(Images/link.png) center no-repeat;
+}

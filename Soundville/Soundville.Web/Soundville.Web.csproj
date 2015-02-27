@@ -161,8 +161,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\background.jpg" />
+    <Content Include="Content\Images\home.png" />
     <Content Include="Content\Images\ligth.jpg" />
+    <Content Include="Content\Images\link.png" />
+    <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\settings.png" />
     <Content Include="Content\Images\shattered.png" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Menu.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -195,6 +202,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <None Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\GetInTouch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

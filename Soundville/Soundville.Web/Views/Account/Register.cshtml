@@ -1,39 +1,42 @@
 ﻿@model Soundville.Presentation.Models.Account.RegisterModel
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
 @{
     ViewBag.Title = "Register";
 }
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+<div class="col-md-10 col-md-offset-1">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h3 class="text-center">Create a new account.</h3>
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-field">
+            <div class="one-full tooltip-container">
+                @Html.TextBoxFor(m => m.Email, new { @class = "one-fulls", placeholder = "Email" })
+                @*@Html.ValidationMessageFor(m => m.Email)*@
+                <div class="tooltip">Email</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="form-field">
+            <div class="one-full tooltip-container">
+                @Html.PasswordFor(m => m.Password, new { @class = "one-fulls", placeholder = "Password" })
+                @*@Html.ValidationMessageFor(m => m.Password)*@
+                <div class="tooltip">Password</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <div class="form-field">
+            <div class="one-full tooltip-container">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "one-fulls", placeholder = "ConfirmPassword" })
+                @*@Html.ValidationMessageFor(m => m.ConfirmPassword)*@
+                <div class="tooltip">ConfirmPassword</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-success" value="Register" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-success" value="Register" />
+            </div>
         </div>
-    </div>
-}
+    }
+</div>

@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width"/>
     <title>@ViewBag.Title | Soundville</title>
     <link href="~/Content/Site.css" rel="stylesheet"/>
+    <link href="~/Content/Menu.css" rel="stylesheet" />
 </head>
 <body>
     <div class="page-wrapper">
-        <div class="header">
-        </div>
         <div class="left-column">
             <div class="wrap-avatar">
                 <img src="" />
@@ -18,7 +17,16 @@
             <h3> Hey there!</h3>
         </div>
         <div class="right-column">
-            @RenderBody()
+            <div class="header">
+                @Html.Partial("_MenuPartial")
+            </div>
+            <div class="content">
+                @RenderBody()
+            </div>
+            <hr/>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Soundville.apphb.com</p>
+            </footer>
         </div>
     </div>
 </body>
