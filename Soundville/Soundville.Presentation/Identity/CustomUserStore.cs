@@ -10,22 +10,22 @@ namespace Soundville.Presentation.Identity
 {
     public class CustomUserStore : IUserPasswordStore<ApplicationUser>, IUserStore<ApplicationUser>, IUserLoginStore<ApplicationUser>
     {
-        private readonly IUserDomainService userDomainService;
+        private readonly IUserDomainService _userDomainService;
 
         public CustomUserStore()
         {
-            userDomainService = IoC.ContainerInstance.Resolve<IUserDomainService>();
+            _userDomainService = IoC.ContainerInstance.Resolve<IUserDomainService>();
         }
 
         public Task CreateAsync(ApplicationUser appUser)
         {
             var user = new User
             {
-                UserName = appUser.UserName,
+                Email = appUser.Email,
                 PasswordHash = appUser.PasswordHash
             };
 
-            appUser.Id = userDomainService.Create(user).Id.ToString();
+            appUser.Id = _userDomainService.Create(user).Id.ToString();
 
             return Task.FromResult(0);
         }
@@ -43,21 +43,21 @@ namespace Soundville.Presentation.Identity
         public Task<ApplicationUser> FindByIdAsync(string userId)
         {
             var id = int.Parse(userId);
-            User user = userDomainService.GetById(id);
+            User user = _userDomainService.GetById(id);
             var appUser = new ApplicationUser
             {
                 Id = user.Id.ToString(),
-                UserName = user.UserName,
+                UserName = user.Email,
                 PasswordHash = user.PasswordHash
             };
 
             return Task.FromResult(appUser);
         }
 
-        public Task<ApplicationUser> FindByNameAsync(string userName)
+        public Task<ApplicationUser> FindByNameAsync(string email)
         {
             ApplicationUser appUser = null;
-            User user = userDomainService.GetByUserName(userName);
+            User user = _userDomainService.GetByEmail(email);
             if (user == null)
             {
                 return Task.FromResult(appUser);
@@ -66,7 +66,7 @@ namespace Soundville.Presentation.Identity
             appUser = new ApplicationUser
             {
                 Id = user.Id.ToString(),
-                UserName = user.UserName,
+                UserName = user.Email,
                 PasswordHash = user.PasswordHash
             };
 

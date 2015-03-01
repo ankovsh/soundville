@@ -152,6 +152,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -165,6 +166,7 @@
     <Content Include="Content\Images\home.png" />
     <Content Include="Content\Images\ligth.jpg" />
     <Content Include="Content\Images\link.png" />
+    <Content Include="Content\Images\male-default-avatar.png" />
     <Content Include="Content\Images\search.png" />
     <Content Include="Content\Images\settings.png" />
     <Content Include="Content\Images\shattered.png" />
@@ -206,6 +208,7 @@
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\GetInTouch.cshtml" />
+    <None Include="Views\Profile\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

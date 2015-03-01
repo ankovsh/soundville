@@ -12,9 +12,14 @@ namespace Soundville.Domain.Services
         {
         }
 
-        public User GetByUserName(string userName)
+        public User GetByEmail(string email)
         {
-            return Context.Users.FirstOrDefault(x => x.UserName == userName);
+            return Context.Users.FirstOrDefault(x => x.Email == email);
+        }
+
+        public void Save(User user)
+        {
+            Context.SaveChanges();
         }
     }
 }

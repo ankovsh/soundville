@@ -4,6 +4,7 @@ namespace Soundville.Domain.Services.Interfaces
 {
     public interface IUserDomainService : IDomainService<User>
     {
-        User GetByUserName(string userName);
+        User GetByEmail(string email);
+        void Save(User user);
     }
 }

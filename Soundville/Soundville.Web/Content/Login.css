@@ -87,10 +87,9 @@ a {
    opacity: 1;
    margin-top: -75px;
  }
-
 }
 
-.col-md-10.col-md-offset-1 {
+.form-container {
 	width: 220px;
 	height: 155px;
 	position: absolute;
@@ -104,10 +103,6 @@ a {
 	-ms-animation: login 1s ease-in-out;
 	-o-animation: login 1s ease-in-out;
 	animation: login 1s ease-in-out;
-}
-
-.tooltip {
-	display: none;
 }
 
 .one-fulls, .form-control {
