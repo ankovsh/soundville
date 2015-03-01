@@ -26,7 +26,6 @@ body {
     background: url("Images/background.jpg") right;
     padding: 0 0 0 0;
     float: left;
-    /*position: fixed;*/
 }
 
 .header {
@@ -62,22 +61,6 @@ footer {
     color: #fff5ee;
     float: right;
     position: fixed;
-}
-
-button {
-    background: url(Images/shattered.png);
-    width: 123px;
-    height: 40px;
-    cursor: pointer;
-    -moz-border-radius: 15%;
-    -webkit-border-radius: 15%;
-    -o-border-radius: 15%;
-    border-radius: 15%;
-    box-shadow: 0 1px 20px rgba(0, 0, 0, .25);
-}
-
-.wrap-button {
-    padding: 20px 0 60px 0;
 }
 
 .input-email, .input-name {
@@ -167,7 +150,7 @@ input[type="submit"]:active {
 	box-shadow: inset 0 1px 0 #93a9e9;
 }
 
-.input-name, .input-email, .input-message {
+.input-name, .input-email, .input-message, .one-fulls {
 	width: 85%;
 	height: 40px;
 	position: relative;

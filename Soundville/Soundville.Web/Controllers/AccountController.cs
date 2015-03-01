@@ -64,7 +64,7 @@ namespace Soundville.Web.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Edit", "Profile");
                 }
 
                 AddErrors(result);

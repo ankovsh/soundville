@@ -5,41 +5,22 @@
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
-<div id="content" class="container">
-    <section class="content col-md-6">
-        <div class="row">
-            <div class="form-container">
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "signup-form", role = "form" }))
-                {
-                    <h2 class="text-center">Please Sign In</h2>
-                    if (TempData["Message"] != null)
-                    {
-                        <p class="message">@TempData["Message"]</p>
-                    }
-                    @Html.ValidationSummary(true)
-                    <div class="form-field">
-                        <div class="one-full tooltip-container">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "one-fulls", placeholder = "Email" })
-                            @*@Html.ValidationMessageFor(m => m.Email)*@
-                            <div class="tooltip">Email</div>
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="one-full tooltip-container">
-                            @Html.PasswordFor(m => m.Password, new { @class = "one-fulls", placeholder = "Password" })
-                            @*@Html.ValidationMessageFor(m => m.Password)*@
-                            <div class="tooltip">Password</div>
-                        </div>
-                    </div>
-                    <div class="one-full m-top fc">
-                        <input type="submit" class="green big m-bottom" value="Sign in">
-                        <div class="link-box">
-                            @*<a href="@Url.Action("RestorePassword")">Forgot My Password</a><br />*@
-                            <a href="@Url.Action("Register", "Account")">Register</a>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>
+<div class="form-container">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        <h2>Please Sign In</h2>
+        if (TempData["Message"] != null)
+        {
+            <p>@TempData["Message"]</p>
+        }
+        @Html.ValidationSummary(true)
+
+        @Html.TextBoxFor(m => m.Email, new { @class = "one-fulls", placeholder = "Email" })
+
+        @Html.PasswordFor(m => m.Password, new { @class = "one-fulls", placeholder = "Password" })
+
+        <input type="submit" value="Sign in">
+        <a href="@Url.Action("Register", "Account")">Register</a>
+
+    }
 </div>
