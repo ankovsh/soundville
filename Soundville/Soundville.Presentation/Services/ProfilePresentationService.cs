@@ -14,11 +14,12 @@ namespace Soundville.Presentation.Services
             _userDomainService = userDomainService;
         }
 
-        public void Save(ProfileEditModel model, string oldEmail)
+        public void Save(ProfileEditModel model, string oldEmail, string newImageName)
         {
             User user = _userDomainService.GetByEmail(oldEmail);
             user.Name = model.Name;
             user.Email = model.Email;
+            user.ImageFileName = newImageName;
             _userDomainService.Save(user);
         }
 

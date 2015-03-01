@@ -1,0 +1,51 @@
+﻿html { height: 100%; width: 100%}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;}
+audio, canvas, video { display: inline-block;*display: inline;*zoom: 1;}
+audio:not([controls]) { display: none;}
+[hidden] { display: none;}
+
+/*body, button, input, select, textarea { font-family: inherit !important;}*/
+
+html, body, h1, h2, h3, h4, h5, h6, p, em, strong, abbr, acronym, blockquote, q, cite, ins, del,
+dfn, a, div, span, pre, hr, address, col, colgroup, form, input, label, textarea, button, fieldset, legend,
+select, option, optgroup, ul, ol, li, dl, dt, dd, code, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary, time, mark, audio, video { padding: 0;margin: 0;outline: 0;font-size: 100%;}
+
+a:focus { -moz-outline-style: none;}
+
+html{ -webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+
+abbr[title] { border-bottom: 1px dotted;}
+b, strong { font-weight: bold;}
+blockquote { margin: 1em 40px;}
+dfn { font-style: italic;}
+hr { display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0;}
+ins { background: #ff9;color: #000;text-decoration: none;}
+mark { background: #ff0;color: #000;font-style: italic;font-weight: bold;}
+pre, code, kbd, samp { font-family: monospace, monospace;_font-family: 'courier new', monospace;font-size: 1em;}
+pre { white-space: pre;white-space: pre-wrap;word-wrap: break-word;}
+q { quotes: none;}
+q:before, q:after {content: ""; content:none;}
+small { font-size: 85%;}
+sub, sup { font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;}
+sup { top: -0.5em;}
+sub { bottom: -0.25em;}
+img { border: 0;-ms-interpolation-mode: bicubic;vertical-align: middle;}
+
+label { cursor: pointer;}
+legend { border: 0;*margin-left: -7px;padding: 0;}
+button, input, select, textarea { font-size: 100%;margin: 0;vertical-align: baseline;*vertical-align: middle;}
+button, input { line-height: normal;*overflow: visible;}
+table button, table input { *overflow: auto;}
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer;-webkit-appearance: button;}
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box;}
+input[type="search"] { -webkit-appearance: textfield;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;box-sizing: content-box;}
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none;}
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0;padding: 0;}
+textarea { overflow: auto;vertical-align: top;resize: vertical;}
+input:valid, textarea:valid {}
+input:invalid, textarea:invalid { background-color: #f0dddd;}
+
+table { border-collapse: collapse;border-spacing: 0;}
+

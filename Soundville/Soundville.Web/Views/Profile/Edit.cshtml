@@ -8,7 +8,7 @@
 <div class="form-container">
     @using (Html.BeginForm("Edit", "Profile", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
     {
-        <h3 class="text-center">Complete Your Profile</h3>
+        <h3>Complete Your Profile</h3>
         <hr/>
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <h3>Basic Info</h3>
@@ -18,8 +18,9 @@
         @Html.TextBoxFor(m => m.Email, new { @class = "one-fulls", placeholder = "Email" })
         <hr/>
         <h3>Photo</h3>
-        <div class="photo">
-            <input type="file" name="@Html.NameFor(m => m.Image)" />
+        <div class="wrap-edit-avatar">
+            <img class="edit-avatar" src="@ViewBag.ImageSrc" alt=""/>
+            @Html.TextBoxFor(m => m.Image, new { @class = "image-load", type = "file" })
         </div>
         <input type="submit" value="Save" />
     }
