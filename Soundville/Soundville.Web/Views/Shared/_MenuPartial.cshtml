@@ -1,13 +1,12 @@
-﻿@using Microsoft.AspNet.Identity
-<ul class="nav">
+﻿<ul class="nav">
     <li class="main-menu">
         <a> Main Menu</a>
-        <a href="@Url.Action("Edit", "Profile")"> Edit profile</a>
-        <a href ="@Url.Action("LogOff", "Account")"> Logoff</a>
+        <a href="@Url.Action("Edit", "Profile")">Edit profile</a>
+        <a href ="@Url.Action("LogOff", "Account")">Logoff</a>
 </li>
     <li class="station">
         <a>Music Stations</a>
-        <a>Create new station</a>
+        <a href="@Url.Action("Edit", "Station")">Create new station</a>
         <a href="@Url.Action("Index", "Home")">All stations</a>
     </li>
     <li class="about">

@@ -2,7 +2,7 @@
 using System.Web;
 using Soundville.Domain.Models;
 
-namespace Soundville.Presentation.Models.Profile
+namespace Soundville.Presentation.Models.Profiles
 {
     public class ProfileEditModel
     {

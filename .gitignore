@@ -7,4 +7,5 @@ _ReSharper.*
 *.suo
 *.dbmdl
 packages
-UserContent
+/Soundville/Soundville.Web/UserContent/avatars
+/Soundville/Soundville.Web/UserContent/stationAvatars

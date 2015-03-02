@@ -1,6 +1,6 @@
 ﻿using Soundville.Domain.Models;
 using Soundville.Domain.Services.Interfaces;
-using Soundville.Presentation.Models.Profile;
+using Soundville.Presentation.Models.Profiles;
 using Soundville.Presentation.Services.Interfaces;
 
 namespace Soundville.Presentation.Services

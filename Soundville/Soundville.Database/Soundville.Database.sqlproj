@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Stations.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="localdb.publish.xml" />

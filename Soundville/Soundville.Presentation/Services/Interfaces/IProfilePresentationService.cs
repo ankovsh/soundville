@@ -1,4 +1,4 @@
-﻿using Soundville.Presentation.Models.Profile;
+﻿using Soundville.Presentation.Models.Profiles;
 
 namespace Soundville.Presentation.Services.Interfaces
 {

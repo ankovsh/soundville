@@ -58,11 +58,14 @@
     <Compile Include="Installers\DbContextInstaller.cs" />
     <Compile Include="Installers\DomainServiceInstaller.cs" />
     <Compile Include="Models\Interfaces\IBaseDomainModel.cs" />
+    <Compile Include="Models\Station.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DomainService.cs" />
     <Compile Include="Services\Interfaces\IDomainServices.cs" />
+    <Compile Include="Services\Interfaces\IStationDomainService.cs" />
     <Compile Include="Services\Interfaces\IUserDomainService.cs" />
+    <Compile Include="Services\StationDomainService.cs" />
     <Compile Include="Services\UserDomainService.cs" />
   </ItemGroup>
   <ItemGroup>

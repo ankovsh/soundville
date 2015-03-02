@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using Castle.Core.Internal;
 using Soundville.Infrastructure.Constants;
 using Soundville.Infrastructure.Utils;
-using Soundville.Presentation.Models.Profile;
+using Soundville.Presentation.Models.Profiles;
 using Soundville.Presentation.Services.Interfaces;
 
 namespace Soundville.Web.Controllers

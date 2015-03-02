@@ -1,4 +1,4 @@
-﻿@model Soundville.Presentation.Models.Profiles.ProfileEditModel
+﻿@model Soundville.Presentation.Models.Stations.StationEditModel
 
 @{
     ViewBag.Title = "Edit";
@@ -6,20 +6,21 @@
 }
 
 <div class="form-container">
-    @using (Html.BeginForm("Edit", "Profile", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Edit", "Station", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
     {
-        <h3>Complete Your Profile</h3>
-        <hr/>
+        @Html.HiddenFor(m => m.Id)
+        
+        <h3>Complete Information About You Station</h3>
+        <hr />
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <h3>Basic Info</h3>
 
         @Html.TextBoxFor(m => m.Name, new { @class = "one-fulls", placeholder = "Name" })
 
-        @Html.TextBoxFor(m => m.Email, new { @class = "one-fulls", placeholder = "Email" })
-        <hr/>
+        <hr />
         <h3>Photo</h3>
         <div class="wrap-edit-avatar">
-            <img class="edit-avatar" src="@ViewBag.ImageSrc" alt=""/>
+            <img class="edit-avatar" src="@ViewBag.ImageSrc" alt="" />
             @Html.TextBoxFor(m => m.Image, new { @class = "image-load", type = "file" })
         </div>
         <input type="submit" value="Save" />

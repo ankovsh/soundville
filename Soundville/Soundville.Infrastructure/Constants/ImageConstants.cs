@@ -12,5 +12,6 @@ namespace Soundville.Infrastructure.Constants
         };
 
         public const string AvatarDir = "/UserContent/avatars";
+        public const string StationAvatarDir = "/UserContent/stationAvatars";
     }
 }

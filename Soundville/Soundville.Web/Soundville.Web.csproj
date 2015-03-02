@@ -153,6 +153,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\StationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,9 +211,12 @@
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\GetInTouch.cshtml" />
     <None Include="Views\Profile\Edit.cshtml" />
+    <None Include="Views\Station\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UserContent\avatars\" />
+    <Folder Include="UserContent\stationAvatars\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
