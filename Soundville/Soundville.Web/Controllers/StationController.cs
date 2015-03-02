@@ -26,8 +26,8 @@ namespace Soundville.Web.Controllers
             ViewBag.ImageSrc = model.ImageFileName.IsNullOrEmpty()
                 ? "/Content/Images/male-default-avatar.png"
                 : Path.Combine(ImageConstants.StationAvatarDir, model.ImageFileName);
-            
-            return View();
+
+            return View(model);
         }
 
         [HttpPost]
