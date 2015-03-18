@@ -29,5 +29,11 @@ namespace Soundville.Presentation.Services
             var model = new ProfileEditModel(user);
             return model;
         }
+
+        public int GetUserIdByEmail(string email)
+        {
+            User user = _userDomainService.GetByEmail(email);
+            return user.Id;
+        }
     }
 }

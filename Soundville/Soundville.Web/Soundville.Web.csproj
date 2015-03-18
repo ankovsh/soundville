@@ -212,6 +212,7 @@
     <None Include="Views\Home\GetInTouch.cshtml" />
     <None Include="Views\Profile\Edit.cshtml" />
     <None Include="Views\Station\Edit.cshtml" />
+    <Content Include="Views\Station\MyStations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

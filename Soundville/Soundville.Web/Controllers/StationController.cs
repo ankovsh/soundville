@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Web.Mvc;
 using Castle.Core.Internal;
@@ -13,10 +14,12 @@ namespace Soundville.Web.Controllers
     public class StationController : Controller
     {
         private readonly IStationPresentationService _stationPresentationService;
+        private readonly IProfilePresentationService _profilePresentationService;
 
-        public StationController(IStationPresentationService stationPresentationService)
+        public StationController(IStationPresentationService stationPresentationService, IProfilePresentationService profilePresentationService)
         {
             _stationPresentationService = stationPresentationService;
+            _profilePresentationService = profilePresentationService;
         }
 
         [HttpGet]
@@ -56,6 +59,14 @@ namespace Soundville.Web.Controllers
                 return RedirectToAction("Index", "Home");
             }
             
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult MyStations()
+        {
+            MyStationsModel model = _stationPresentationService.GetMyStationsModel(User.Identity.Name);
+
             return View(model);
         }
     }

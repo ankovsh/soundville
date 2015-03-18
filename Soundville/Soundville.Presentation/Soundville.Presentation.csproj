@@ -57,7 +57,10 @@
     <Compile Include="Models\Account\LoginModel.cs" />
     <Compile Include="Models\Account\RegisterModel.cs" />
     <Compile Include="Models\Profiles\ProfileEditModel.cs" />
+    <Compile Include="Models\Profiles\ProfileModel.cs" />
+    <Compile Include="Models\Stations\MyStationsModel.cs" />
     <Compile Include="Models\Stations\StationEditModel.cs" />
+    <Compile Include="Models\Stations\StationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\IPresentationService.cs" />
     <Compile Include="Services\Interfaces\IProfilePresentationService.cs" />

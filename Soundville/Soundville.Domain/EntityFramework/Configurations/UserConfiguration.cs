@@ -8,6 +8,10 @@ namespace Soundville.Domain.EntityFramework.Configurations
         public UserConfiguration()
         {
             HasKey(x => x.Id);
+
+            HasMany(x => x.Stations)
+                .WithRequired(x => x.User)
+                .HasForeignKey(x => x.UserId);
         }
     }
 }

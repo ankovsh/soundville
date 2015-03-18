@@ -1,4 +1,5 @@
-﻿using Soundville.Domain.Models.Interfaces;
+﻿using System.Collections.Generic;
+using Soundville.Domain.Models.Interfaces;
 
 namespace Soundville.Domain.Models
 {
@@ -8,5 +9,7 @@ namespace Soundville.Domain.Models
         public string Name { get; set; }
         public string ImageFileName { get; set; }
         public int UserId { get; set; }
+        public virtual User User { get; set; }
+        public virtual IList<StationSong> StationSongs { get; set; }
     }
 }

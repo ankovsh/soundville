@@ -38,5 +38,13 @@ namespace Soundville.Presentation.Services
             
             _stationDomainService.Save(station);
         }
+
+        public MyStationsModel GetMyStationsModel(string userEmail)
+        {
+            var stations = _stationDomainService.GetAllStationsByUser(userEmail);
+            var model = new MyStationsModel(stations);
+
+            return model;
+        }
     }
 }

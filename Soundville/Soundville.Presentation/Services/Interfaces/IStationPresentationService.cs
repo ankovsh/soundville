@@ -6,5 +6,6 @@ namespace Soundville.Presentation.Services.Interfaces
     {
         void Save(StationEditModel model, string newImageName, string userEmail);
         StationEditModel GetStationEditModel(int? id);
+        MyStationsModel GetMyStationsModel(string userEmail);
     }
 }
