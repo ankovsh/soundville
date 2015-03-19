@@ -37,25 +37,26 @@ namespace Soundville.Web.Controllers
             // TODO: проверка существования папки UserContent/avatars
             // TODO: удаление старой аватарки из папки
 
-            if (model.Image == null || model.Image.ContentLength == 0)
-            {
-                ModelState.AddModelError(
-                    NameOf<ProfileEditModel>.Property(x => x.Image),
-                    "This field is required");
-            }
-            else if (!ImageConstants.ValidImageTypes.Contains(model.Image.ContentType))
+            if (model.Image != null && !ImageConstants.ValidImageTypes.Contains(model.Image.ContentType))
             {
                 ModelState.AddModelError(
                     NameOf<ProfileEditModel>.Property(x => x.Image),
                     "Please choose either a GIF, JPG or PNG image.");
+                ViewBag.ImageSrc = "/Content/Images/male-default-avatar.png";
             }
 
             if (ModelState.IsValid)
             {
-                string imageExtension = Path.GetExtension(model.Image.FileName);
-                string newImageName = Guid.NewGuid() + imageExtension;
-                var imagePath = Path.Combine(Server.MapPath(ImageConstants.AvatarDir), newImageName);
-                model.Image.SaveAs(imagePath);
+                string newImageName;
+                if (model.Image != null)
+                {
+                    string imageExtension = Path.GetExtension(model.Image.FileName);
+                    newImageName = Guid.NewGuid() + imageExtension;
+                    var imagePath = Path.Combine(Server.MapPath(ImageConstants.AvatarDir), newImageName);
+                    model.Image.SaveAs(imagePath);
+                }
+                else newImageName = null;
+                
                 _profilePresentationService.Save(model, User.Identity.Name, newImageName);
                 return RedirectToAction("Index", "Home");
             }

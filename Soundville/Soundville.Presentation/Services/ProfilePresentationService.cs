@@ -19,7 +19,11 @@ namespace Soundville.Presentation.Services
             User user = _userDomainService.GetByEmail(oldEmail);
             user.Name = model.Name;
             user.Email = model.Email;
-            user.ImageFileName = newImageName;
+            if (newImageName != null)
+            {
+                user.ImageFileName = newImageName;
+            }
+            
             _userDomainService.Save(user);
         }
 
