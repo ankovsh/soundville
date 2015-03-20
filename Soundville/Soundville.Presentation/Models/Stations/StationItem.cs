@@ -19,6 +19,7 @@ namespace Soundville.Presentation.Models.Stations
 
         public StationItem(Station station)
         {
+            Id = station.Id;
             Name = station.Name;
             ImageFileName = station.ImageFileName;
         }

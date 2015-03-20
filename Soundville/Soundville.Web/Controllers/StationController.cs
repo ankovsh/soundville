@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Web.Mvc;
 using Castle.Core.Internal;
@@ -14,15 +13,13 @@ namespace Soundville.Web.Controllers
     public class StationController : Controller
     {
         private readonly IStationPresentationService _stationPresentationService;
-        private readonly IProfilePresentationService _profilePresentationService;
 
-        public StationController(IStationPresentationService stationPresentationService, IProfilePresentationService profilePresentationService)
+        public StationController(IStationPresentationService stationPresentationService)
         {
             _stationPresentationService = stationPresentationService;
-            _profilePresentationService = profilePresentationService;
         }
 
-        [HttpGet]
+        [HttpGet]   
         public ActionResult Edit(int? id)
         {
             StationEditModel model = _stationPresentationService.GetStationEditModel(id);
@@ -66,6 +63,14 @@ namespace Soundville.Web.Controllers
         public ActionResult MyStations()
         {
             MyStationsModel model = _stationPresentationService.GetMyStationsModel(User.Identity.Name);
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult ViewStation(int id)
+        {   
+            var model = _stationPresentationService.GetViewStationModel(id);
 
             return View(model);
         }
