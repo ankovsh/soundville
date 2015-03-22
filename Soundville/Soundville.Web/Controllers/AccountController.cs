@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using Soundville.Infrastructure.SocialNetwork;
 using Soundville.Presentation.Identity;
 using Soundville.Presentation.Models.Account;
 
@@ -85,6 +86,11 @@ namespace Soundville.Web.Controllers
         {
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult VkAuth(string redirectUrl)
+        {
+            return Redirect(VkHelper.GetAuthUrl(redirectUrl));
         }
 
         private IAuthenticationManager AuthenticationManager

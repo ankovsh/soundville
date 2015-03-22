@@ -22,14 +22,14 @@ namespace Soundville.Infrastructure.SocialNetwork
             public object ExpiresIn { get; set; }
         }
 
-        public static async Task<VKApi> GetApi(string code)
+        public static async Task<VKApi> GetApi(string code, string redirectUrl)
         {
             var webClient = new HttpClient();
             HttpResponseMessage response = await webClient.GetAsync(
                 "https://oauth.vk.com/access_token?client_id=" + AppSettings.VkClientId +
                 "&client_secret=" + AppSettings.VkClientSecret + 
                 "&code=" + code + 
-                "&redirect_uri=" + AppSettings.SiteUrl + "Profile/Test/");
+                "&redirect_uri=" + redirectUrl);
 
             string responseBody = await response.Content.ReadAsStringAsync();
 
@@ -44,5 +44,14 @@ namespace Soundville.Infrastructure.SocialNetwork
             return api;
         }
 
+        public static string GetAuthUrl(string redirectUrl)
+        {
+            var authUrl =
+                "https://oauth.vk.com/authorize?client_id=" + AppSettings.VkClientId +
+                "&scope=audio&redirect_uri=" + redirectUrl +
+                "&display=popup&v=5.29&%20response_type=token";
+
+            return authUrl;
+        }
     }
 }
