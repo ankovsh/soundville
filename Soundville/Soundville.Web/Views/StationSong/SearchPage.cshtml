@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/Custom/Search.js"></script>
+}
+
+<div class="search">
+    <input type="search" placeholder="поиск" class="search-input" />
+    <input type="submit" class="submit submit-search" value="" />
+
+    <ul id="search-result"></ul>
+</div>

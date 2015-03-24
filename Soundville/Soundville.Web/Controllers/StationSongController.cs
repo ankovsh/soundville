@@ -17,5 +17,10 @@ namespace Soundville.Web.Controllers
                 redirectUrl = AppSettings.SiteUrl + "StationSong/SearchPage?isAuthenticated=true"
             });
         }
+
+        public ActionResult Search(string searchString)
+        {
+            return Json(new[] { new { Id = 1, Value = "Splin" }, new { Id = 2, Value = "Agata" } }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

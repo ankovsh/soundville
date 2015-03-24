@@ -10,25 +10,30 @@
     <link href="~/Content/Menu.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="page-wrapper">
-        <div class="left-column">
-            <div class="wrap-avatar">
-                <img class="avatar" alt=""/>
-                <h3> Hey there!</h3>
-            </div>
-        </div>
-        <div class="right-column">
-            <div class="header">
-                @Html.Partial("_MenuPartial")
-            </div>
-            <div class="content">
-                @RenderBody()
-            </div>
-            <hr/>
-            <footer>
-                <p>&copy; 2015 - Soundville</p>
-            </footer>
+<div class="page-wrapper">
+    <div class="left-column">
+        <div class="wrap-avatar">
+            <img class="avatar" alt=""/>
+            <h3> Hey there!</h3>
         </div>
     </div>
+    <div class="right-column">
+        <div class="header">
+            @Html.Partial("_MenuPartial")
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+        <hr/>
+        <footer>
+            <p>&copy; 2015 - Soundville</p>
+        </footer>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+@RenderSection("Scripts", false)
+
 </body>
 </html>

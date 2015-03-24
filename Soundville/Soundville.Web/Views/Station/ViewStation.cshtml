@@ -1,0 +1,37 @@
+﻿@model Soundville.Presentation.Models.Stations.ViewStationModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-container">
+    @Html.HiddenFor(m => m.Station.Id)
+
+    <div class="wrap-station">
+        <div class="station-info">
+            <img class="station-avatar" src="@ViewBag.DefaultImageSrc" alt="" />
+            <h3 class="station-name">@Model.Station.Name</h3>
+        </div>
+        <div class="buttons">
+            <a class="button" href="@Url.Action("SearchPage", "StationSong")">Search</a>
+        </div>
+    </div>
+    <hr/>
+    <div class="wrap-songs">
+        @{
+            foreach (var song in Model.Songs)
+            {
+                <a class="song" href="">
+                    @song.Song.Artist - @song.Song.Title
+                </a>
+            }
+        }
+    </div>
+    <div class="wrap-paging">
+        <ul>
+            <li>
+                <a class="paging button" href="">1</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -179,6 +179,7 @@
     <Content Include="Content\Images\link.png" />
     <Content Include="Content\Images\male-default-avatar.png" />
     <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\searchDark.png" />
     <Content Include="Content\Images\settings.png" />
     <Content Include="Content\Images\shattered.png" />
     <Content Include="Content\Login.css" />
@@ -191,6 +192,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Font\PTS55F.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\Search.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -221,8 +223,10 @@
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\GetInTouch.cshtml" />
     <None Include="Views\Profile\Edit.cshtml" />
+    <None Include="Views\StationSong\SearchPage.cshtml" />
     <None Include="Views\Station\Edit.cshtml" />
     <Content Include="Views\Station\MyStations.cshtml" />
+    <None Include="Views\Station\ViewStation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
