@@ -4,6 +4,7 @@ using Soundville.Infrastructure.Constants;
 using Soundville.Infrastructure.SocialNetwork;
 using Soundville.Presentation.Models.Profiles;
 using Soundville.Presentation.Services.Interfaces;
+using VKSharp.Data.Parameters;
 
 namespace Soundville.Web.Controllers
 {
@@ -34,8 +35,13 @@ namespace Soundville.Web.Controllers
             });
         }
 
-        public ActionResult Search(string searchString)
+        public async Task<ActionResult> SearchAsync(string searchString)
         {
+            var token = _profilePresentationService.GetTokenByEmail(User.Identity.Name);
+            var api = VkHelper.GetApi(token);
+
+            var songs = await api.Audio.Search(searchString, true, false, false, AudioSortOrder.ByRating, false);
+            
             return Json(new[] { new { Id = 1, Value = "Splin" }, new { Id = 2, Value = "Agata" } }, JsonRequestBehavior.AllowGet);
         }
     }

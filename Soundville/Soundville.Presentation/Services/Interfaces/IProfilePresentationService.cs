@@ -8,5 +8,6 @@ namespace Soundville.Presentation.Services.Interfaces
         ProfileEditModel GetProfileEditModel(string email);
         int GetUserIdByEmail(string email);
         void SaveVkModel(ProfileVkModel model, string email);
+        string GetTokenByEmail(string email);
     }
 }

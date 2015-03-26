@@ -47,5 +47,11 @@ namespace Soundville.Presentation.Services
 
             _userDomainService.Save(user);
         }
+
+        public string GetTokenByEmail(string email)
+        {
+            User user = _userDomainService.GetByEmail(email);
+            return user.Token;
+        }
     }
 }

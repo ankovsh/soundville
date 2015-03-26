@@ -1,7 +1,7 @@
 ﻿$(function () {
     $(".submit-search").click(function () {
         $.ajax({
-            url: "/StationSong/Search",
+            url: "/StationSong/SearchAsync",
             dataType: "json",
             data: { searchString: $(".search-input").val() },
             success: function (items) {
