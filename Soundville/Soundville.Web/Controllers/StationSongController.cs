@@ -40,9 +40,9 @@ namespace Soundville.Web.Controllers
             var token = _profilePresentationService.GetTokenByEmail(User.Identity.Name);
             var api = VkHelper.GetApi(token);
 
-            var songs = await api.Audio.Search(searchString, true, false, false, AudioSortOrder.ByRating, false);
+            var songs = await api.Audio.Search(searchString);
             
-            return Json(new[] { new { Id = 1, Value = "Splin" }, new { Id = 2, Value = "Agata" } }, JsonRequestBehavior.AllowGet);
+            return Json(songs, JsonRequestBehavior.AllowGet);
         }
     }
 }

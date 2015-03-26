@@ -346,3 +346,325 @@ hr {
     background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
     background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
+
+/****Player****/
+
+:focus {
+	outline:none;
+}
+
+.player {
+	position: relative;
+	left: 50%;
+	height: 170px;
+	width: 85%;
+	margin-left: -260px;
+}
+
+.bar {
+	height: 100px;
+	width: 520px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.but {
+	float: left;
+	margin-left:20px;
+	background-color: #151515;
+	height: 70px;
+	width: 70px;
+	border: 5px solid #0b0b0b;
+	border-radius: 40px;
+	box-shadow: inset 0px 4px 2px #414243,
+				0px 0px 10px #414243;
+	background: -webkit-linear-gradient(bottom, #161616, #262727);
+	background: -moz-linear-gradient(bottom, #161616, #262727);
+	background: -ms-linear-gradient(bottom, #161616, #262727);
+	background: -o-linear-gradient(bottom, #161616, #262727);
+	margin-top: 20px;
+}
+
+.but:hover {
+	box-shadow: inset 0px 4px 2px #414243,
+				0px 0px 10px #5466da;
+	border: 5px solid #5466da;
+	}
+
+.butIcon {
+	height: 45px;
+	width: 45px;
+	background-repeat: no-repeat;	
+}
+
+.but:hover .butIcon {
+	height: 43px;
+	width: 43px;
+	background-repeat: no-repeat;
+}
+	
+#play {
+	margin-top: 15px;
+	margin-left: 15px;
+	background-image: url(Images/play.png);
+}
+	
+.but:hover #play {
+	background-image: url(Images/playHo.png);
+	margin-top: 15px;
+	margin-left: 15px;
+}
+	
+#stop {
+	margin-top: 15px;
+	margin-left: 15px;
+	background-image: url(Images/stop.png);
+}
+	
+.but:hover #stop {
+	background-image: url(Images/stopHo.png);
+	margin-top: 15px;
+	margin-left: 14px;
+}
+	
+#pause {
+	margin-top: 15px;
+	margin-left: 15px;
+	background-image: url(Images/pause.png);
+}
+	
+.but:hover #pause {
+	background-image: url(Images/pauseHo.png);
+	margin-top: 15px;
+	margin-left: 15px;
+}
+	
+.butMin {
+	float: left;
+	margin-left:20px;
+	background-color: #151515;
+	height: 50px;
+	width: 50px;
+	border: 5px solid #0b0b0b;
+	border-radius: 30px;
+	box-shadow: inset 0px 4px 2px #414243,
+				0px 0px 10px #414243;
+	background: -webkit-linear-gradient(bottom, #161616, #262727);
+	background: -moz-linear-gradient(bottom, #161616, #262727);
+	background: -ms-linear-gradient(bottom, #161616, #262727);
+	background: -o-linear-gradient(bottom, #161616, #262727);
+	margin-top: 20px;
+}
+
+.butMin:hover {
+	box-shadow: inset 0px 4px 2px #414243,
+				0px 0px 10px #5466da;
+	border: 5px solid #5466da;
+}
+	
+.butIconMin {
+	height: 25px;
+	width: 25px;
+	background-repeat: no-repeat;	
+}
+
+.butMin:hover .butIconMin {
+	height: 25px;
+	width: 25px;
+	background-repeat: no-repeat;
+}
+	
+#nextTrack {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/next.png);
+}
+	
+.butMin:hover #nextTrack {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/nextHo.png);
+}
+	
+#prevTrack {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/prev.png);
+}
+	
+.butMin:hover #prevTrack {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/prevHo.png);
+}
+	
+#repickTrack {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/repTrack.png);
+}
+	
+.butMin:hover #repickTrack {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/repTrackHo.png);
+}
+	
+#repickPlay {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/repPl.png);
+}
+	
+.butMin:hover #repickPlay {
+	margin-top: 13px;
+	margin-left: 13px;
+	background-image: url(Images/repPlHo.png);
+}
+
+#rangeVal {
+	width:250px;
+}
+
+.range {
+	width:310px;
+	height:25px;
+	position: absolute;
+	background-color: #151515;
+	padding-top: 10px;
+	border-radius: 20px;
+	box-shadow: 0px 1px 1px #414243,
+				inset 0px 1px 1px #000;
+	bottom: 0px;
+	right: 175px;
+}
+	
+#vol {
+	width:25px;
+	height:25px;
+	background-image: url(Images/vol.png);
+	background-repeat:no-repeat;
+	float: left;
+	position: relative;
+	left: 10px;
+	top: -3px;	
+}
+	
+#playList {
+	width:40px;
+	height:40px;
+	background-color: #151515;
+	box-shadow: inset 0px 4px 2px #414243,
+					  0px 0px 10px #414243;
+	background: -webkit-linear-gradient(bottom, #161616, #262727);
+	background: -moz-linear-gradient(bottom, #161616, #262727);
+	background: -ms-linear-gradient(bottom, #161616, #262727);
+	background: -o-linear-gradient(bottom, #161616, #262727);
+	border: 5px solid #0b0b0b;
+	border-radius:5px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+	
+#plMin {
+	width: 30px;
+	height: 30px;
+	background-image: url(Images/playList.png);
+	background-repeat:no-repeat;
+	position: absolute;
+	left: 7px;
+	top: 7px;
+}
+
+#playList:hover {
+	box-shadow: inset 0px 4px 2px #414243,
+					  0px 0px 10px #5f73e9;
+	border-color:#5f73e9;
+}
+	
+#playList:hover #plMin {
+	background-image:url(Images/playListHo.png);
+}
+	
+#valNumb {
+	background-image:url(Images/valNumb.png);
+	background-repeat: no-repeat;
+	color:#5f73e9;
+	text-shadow: 0 0 4px #5f73e9;
+	width:40px;
+	height:30px;
+	position: absolute;
+	top: 3px;
+	right: -40px;
+	font-family: "Comic Sans MS", cursive;
+}
+	
+#val {
+	position: relative;
+	left: 6px;
+	top: 2px;
+	text-align: center;
+}
+
+#progress {
+	height: 5px;
+	border: 3px solid #151515;
+	border-radius: 5px;
+	background-color: #000;
+	box-shadow: 0 1px 1px #414243;	
+}
+#duration {
+	font-family: "Comic Sans MS", cursive;
+	position: absolute;
+	top: -8px;
+	right: -40px;	
+	color:#5f73e9;
+	text-shadow: 0 0 4px #5f73e9;
+}
+#current {
+	font-family: "Comic Sans MS", cursive;
+	position: absolute;
+	left: -40px;
+	top: -8px;
+	color:#5f73e9;
+	text-shadow: 0 0 4px #5f73e9;
+}
+
+#error {
+	color:#5f73e9;
+	text-shadow: 0 0 4px #5f73e9;
+	text-align: center;
+	position: absolute;
+	top: -50px;
+	font-family: "Comic Sans MS", cursive;
+	width: 520px;
+}
+
+.playL {
+	background-color: #151515;
+	box-shadow: 0px 1px 1px #414243,
+				inset 0px 1px 1px #000;
+	border-radius: 5px;
+	width: 500px;
+	position: absolute;
+	left: 50%;
+	top: 450px;
+	display: none;
+	margin-left: -240px;
+}
+	
+.playL ul {
+	list-style-type: decimal;
+	font-family: "Comic Sans MS", cursive;
+	color:#5f73e9;
+}
+
+.playL li:hover {
+	text-shadow: 0 0 4px #5f73e9;
+}
+
+.playL a {
+	text-decoration: none;
+	color:#5f73e9;
+}

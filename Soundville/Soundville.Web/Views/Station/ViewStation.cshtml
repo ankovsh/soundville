@@ -9,7 +9,18 @@
 
     <div class="wrap-station">
         <div class="station-info">
-            <img class="station-avatar" src="@ViewBag.DefaultImageSrc" alt="" />
+            @{
+                string imageSrc;
+                if (Model.Station.ImageFileName != null)
+                {
+                    imageSrc = ViewBag.PartialImageUrl + Model.Station.ImageFileName;
+                }
+                else
+                {
+                    imageSrc = @ViewBag.DefaultImageSrc;
+                } 
+             }
+            <img class="station-avatar" src= @imageSrc alt="" />
             <h3 class="station-name">@Model.Station.Name</h3>
         </div>
         <div class="buttons">
@@ -17,17 +28,75 @@
         </div>
     </div>
     <hr/>
-    <div class="wrap-songs">
-        @{
-            foreach (var song in Model.Songs)
-            {
-                <a class="song-info" href="">
-                    <span class="song-artist">@song.Song.Artist</span>
-                    <span class="song-title">@song.Song.Title</span>
-                </a>
-            }
-        }
+
+
+    <div class="player">
+        <div id="trackInfo">
+            <div id="error"></div>
+            <div id="duration">0:00</div>
+            <div id="current">0:00</div>
+            <div id="progress"></div>
+        </div>
+        <div class="bar">
+            <a id="repick" href="#" title="Repeat track">
+                <div class="butMin">
+                    <div id="repickTrack" class="butIconMin"></div>
+                </div>
+            </a>
+            <a id="preTreck" href="#" title="Previous track">
+                <div class="butMin">
+                    <div id="prevTrack" class="butIconMin"></div>
+                </div>
+            </a>
+            <a id="pl" href="#" title="Play">
+                <div class="but">
+                    <div id="play" class="butIcon"></div>
+                </div>
+            </a>
+            <a id="pa" href="#" title="Pause">
+                <div class="but">
+                    <div id="pause" class="butIcon"></div>
+                </div>
+            </a>
+            <a id="nexTreck" href="#" title="Next track">
+                <div class="butMin">
+                    <div id="nextTrack" class="butIconMin"></div>
+                </div>
+            </a>
+            <a id="repickPl" href="#" title="Repeat playlist">
+                <div class="butMin">
+                    <div id="repickPlay" class="butIconMin"></div>
+                </div>
+            </a>
+            <a id="plL" href="#" title="Открыть плейлист"><div id="playList"><div id="plMin"></div></div></a>
+        </div>
+        <div class="range">
+            <div id="vol"></div>
+            <div id="rangeVal"></div>
+            <div id="valNumb">
+                <div id="val"></div>
+            </div>
+        </div>
     </div>
+    <div class="playL">
+        <ul>
+            @{
+                foreach (var song in Model.Songs)
+                {
+                    <li>
+                        <a href="#">
+                            <span class="song-artist">@song.Song.Artist</span>
+                            <span class="song-title">@song.Song.Title</span>
+                        </a>
+                        <audio preload="none">
+                            <source src="@song.SongUrl"/>
+                        </audio>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+
     <div class="wrap-paging">
         <ul>
             <li>

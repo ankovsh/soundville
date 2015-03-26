@@ -13,9 +13,17 @@
             <div class="wrap-station">
                 <div class="station-info">
                     @{
-                        var imageSrc = ViewBag.PartialImageUrl + station.ImageFileName;
+                        string imageSrc;
+                        if (station.ImageFileName != null)
+                        {
+                            imageSrc = ViewBag.PartialImageUrl + station.ImageFileName;
+                        }
+                        else
+                        {
+                            imageSrc = @ViewBag.DefaultImageSrc;
+                        }
                     }
-                    <img class="station-avatar" src="@imageSrc" alt=""/>
+                    <img class="station-avatar" src=@imageSrc alt="" />
                     <h3 class="station-name">@station.Name</h3>
                 </div>
                 <div class="buttons">
