@@ -63,7 +63,7 @@ namespace Soundville.Web.Controllers
         public ActionResult MyStations()
         {
             MyStationsModel model = _stationPresentationService.GetMyStationsModel(User.Identity.Name);
-
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarDir + "/";
             return View(model);
         }
 
@@ -73,7 +73,7 @@ namespace Soundville.Web.Controllers
             var model = _stationPresentationService.GetViewStationModel(id);
             ViewBag.Title = model.Station.Name;
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
-            ViewBag.PartialImageUrl = ImageConstants.StationAvatarDir;
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarDir + "/";
 
             return View(model);
         }

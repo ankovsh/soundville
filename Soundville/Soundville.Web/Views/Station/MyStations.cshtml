@@ -5,4 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>title</h2>
+<div class="form-container">
+
+    @{
+        foreach (var station in Model.Stations)
+        {
+            <div class="wrap-station">
+                <div class="station-info">
+                    @{
+                        var imageSrc = ViewBag.PartialImageUrl + station.ImageFileName;
+                    }
+                    <img class="station-avatar" src="@imageSrc" alt=""/>
+                    <h3 class="station-name">@station.Name</h3>
+                </div>
+                <div class="buttons">
+                    <a class="button" href="@Url.Action("ViewStation", "Station", new {id = station.Id})">Go to station</a>
+                </div>
+            </div>
+            <hr />
+        }
+    }
+
+</div>
+
