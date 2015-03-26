@@ -7,5 +7,6 @@ namespace Soundville.Presentation.Services.Interfaces
         void Save(ProfileEditModel model, string oldEmail, string newImageName);
         ProfileEditModel GetProfileEditModel(string email);
         int GetUserIdByEmail(string email);
+        void SaveVkModel(ProfileVkModel model, string email);
     }
 }

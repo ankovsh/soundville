@@ -4,6 +4,7 @@
 	[Email]		   NVARCHAR (50)  NOT NULL,
 	[ImageFileName]	NVARCHAR(256) NULL,
     [PasswordHash] NVARCHAR (MAX) NOT NULL,
+    [Token] NVARCHAR(256) NULL, 
     CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

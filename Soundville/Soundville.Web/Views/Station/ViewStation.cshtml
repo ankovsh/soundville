@@ -21,8 +21,9 @@
         @{
             foreach (var song in Model.Songs)
             {
-                <a class="song" href="">
-                    @song.Song.Artist - @song.Song.Title
+                <a class="song-info" href="">
+                    <span class="song-artist">@song.Song.Artist</span>
+                    <span class="song-title">@song.Song.Title</span>
                 </a>
             }
         }

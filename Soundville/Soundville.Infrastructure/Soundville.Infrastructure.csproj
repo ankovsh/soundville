@@ -39,6 +39,10 @@
     <Reference Include="kasthack.VKSharp">
       <HintPath>..\packages\kasthack.vksharp.0.5.13.29907\lib\net45\kasthack.VKSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\kasthack.vksharp.0.5.13.29907\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />

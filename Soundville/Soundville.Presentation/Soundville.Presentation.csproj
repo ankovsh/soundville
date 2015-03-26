@@ -58,6 +58,7 @@
     <Compile Include="Models\Account\RegisterModel.cs" />
     <Compile Include="Models\Profiles\ProfileEditModel.cs" />
     <Compile Include="Models\Profiles\ProfileModel.cs" />
+    <Compile Include="Models\Profiles\ProfileVkModel.cs" />
     <Compile Include="Models\Stations\MyStationsModel.cs" />
     <Compile Include="Models\Stations\SongItem.cs" />
     <Compile Include="Models\Stations\StationEditModel.cs" />

@@ -16,13 +16,13 @@ namespace Soundville.Infrastructure.SocialNetwork
         private class TokenInfo
         {
             [DataMember]
-            public string AccessToken { get; set; }
+            public string access_token { get; set; }
 
             [DataMember]
-            public object ExpiresIn { get; set; }
+            public object expires_in { get; set; }
         }
 
-        public static async Task<VKApi> GetApi(string code, string redirectUrl)
+        public static async Task<string> GetTokenAsync(string code, string redirectUrl)
         {
             var webClient = new HttpClient();
             HttpResponseMessage response = await webClient.GetAsync(
@@ -37,9 +37,14 @@ namespace Soundville.Infrastructure.SocialNetwork
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(responseBody));
             var tokenInfo = (TokenInfo)ser.ReadObject(stream);
 
+            return tokenInfo.access_token;
+        }
+
+        public static VKApi GetApi(string token)
+        {
             var api = new VKApi();
 
-            api.AddToken(new VKToken(tokenInfo.AccessToken));
+            api.AddToken(new VKToken(token));
 
             return api;
         }

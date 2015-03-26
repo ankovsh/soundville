@@ -39,5 +39,13 @@ namespace Soundville.Presentation.Services
             User user = _userDomainService.GetByEmail(email);
             return user.Id;
         }
+
+        public void SaveVkModel(ProfileVkModel model, string email)
+        {
+            User user = _userDomainService.GetByEmail(email);
+            user.Token = model.Token;
+
+            _userDomainService.Save(user);
+        }
     }
 }
