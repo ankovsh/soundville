@@ -4,7 +4,6 @@ using Soundville.Infrastructure.Constants;
 using Soundville.Infrastructure.SocialNetwork;
 using Soundville.Presentation.Models.Profiles;
 using Soundville.Presentation.Services.Interfaces;
-using VKSharp.Data.Parameters;
 
 namespace Soundville.Web.Controllers
 {

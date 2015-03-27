@@ -4,6 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section Scripts
+{
+    <script src="~/Scripts/Custom/Player.js"></script>
+}
+
 <div class="form-container">
     @Html.HiddenFor(m => m.Station.Id)
 
@@ -68,11 +73,13 @@
                     <div id="repickPlay" class="butIconMin"></div>
                 </div>
             </a>
-            <a id="plL" href="#" title="Открыть плейлист"><div id="playList"><div id="plMin"></div></div></a>
         </div>
         <div class="range">
             <div id="vol"></div>
-            <div id="rangeVal"></div>
+            <div id="rangeVal">
+                <div class="ui-slider-range ui-slider-range-min"></div>
+                <a class="ui-slider-handle" href="#"></a>
+            </div>
             <div id="valNumb">
                 <div id="val"></div>
             </div>
@@ -92,16 +99,17 @@
                             <source src="@song.SongUrl"/>
                         </audio>
                     </li>
+                    <hr/>
                 }
             }
         </ul>
     </div>
 
-    <div class="wrap-paging">
+    @*<div class="wrap-paging">
         <ul>
             <li>
                 <a class="paging button" href="">1</a>
             </li>
         </ul>
-    </div>
+    </div>*@
 </div>

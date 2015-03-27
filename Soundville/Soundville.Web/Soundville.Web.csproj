@@ -186,6 +186,7 @@
     <Content Include="Content\Images\playHo.png" />
     <Content Include="Content\Images\playList.png" />
     <Content Include="Content\Images\playListHo.png" />
+    <Content Include="Content\Images\polz.png" />
     <Content Include="Content\Images\prev.png" />
     <Content Include="Content\Images\prevHo.png" />
     <Content Include="Content\Images\repPl.png" />
@@ -210,6 +211,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Font\PTS55F.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\Player.js" />
     <Content Include="Scripts\Custom\Search.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
