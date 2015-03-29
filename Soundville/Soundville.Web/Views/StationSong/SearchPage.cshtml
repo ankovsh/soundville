@@ -6,6 +6,9 @@
 @section Scripts
 {
     <script src="~/Scripts/Custom/Search.js"></script>
+
+    <script src="~/Scripts/Custom/Player.js"></script>
+    <script src="http://www.wavesurfer.fm/dist/wavesurfer.min.js"></script>
 }
 
 <div class="search">
@@ -13,5 +16,10 @@
     <input type="search" placeholder="поиск" class="search-input"/>
     <input type="submit" class="submit submit-search" value=""/>
 
-    <ul id="search-result"></ul>
+    <div id="wave"></div>
+
+    <div id="search-song" class="playL">
+        <ul id="search-result"></ul>
+    </div>
+    
 </div>
