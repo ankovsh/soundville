@@ -236,7 +236,6 @@ input[type="submit"], .button, .paging:active {
 }
 
 .station-info {
-    width: 60%;
     display: inline;
     float: left;
     position: relative;
@@ -270,6 +269,12 @@ a.button {
     padding: 10px 15px 10px 15px;
     box-shadow:0 1px rgba(255,255,255,.2) inset, 0 3px 5px rgba(0,1,6,.5), 0 0 1px 1px rgba(0,1,6,.2);
     border: none;
+    margin-left: 50px;
+}
+
+.broadcast-wrap {
+    margin-top: -30px;
+    margin-bottom: 100px;
 }
 
 .wrap-paging {
@@ -367,10 +372,6 @@ hr {
     height: 50px;
 }
 
-#wave {
-    padding-top: 20px;
-}
-
 /****Player****/
 
 :focus {
@@ -437,18 +438,6 @@ hr {
 	margin-left: 15px;
 }
 	
-#stop {
-	margin-top: 15px;
-	margin-left: 15px;
-	background-image: url(Images/stop.png);
-}
-	
-.but:hover #stop {
-	background-image: url(Images/stopHo.png);
-	margin-top: 15px;
-	margin-left: 14px;
-}
-	
 #pause {
 	margin-top: 15px;
 	margin-left: 15px;
@@ -494,52 +483,28 @@ hr {
 	background-repeat: no-repeat;
 }
 	
-#nextTrack {
+#stop-broadcasting {
 	margin-top: 13px;
 	margin-left: 13px;
-	background-image: url(Images/next.png);
+	background: url(Images/stop.png) 50% no-repeat;
 }
 	
-.butMin:hover #nextTrack {
+.butMin:hover #stop-broadcasting {
 	margin-top: 13px;
 	margin-left: 13px;
-	background-image: url(Images/nextHo.png);
+	background: url(Images/stopHo.png) 50% no-repeat;
 }
 	
-#prevTrack {
+#broadcasting {
 	margin-top: 13px;
 	margin-left: 13px;
-	background-image: url(Images/prev.png);
+	background: url(Images/play.png) 90% no-repeat;
 }
 	
-.butMin:hover #prevTrack {
+.butMin:hover #broadcasting {
 	margin-top: 13px;
 	margin-left: 13px;
-	background-image: url(Images/prevHo.png);
-}
-	
-#repickTrack {
-	margin-top: 13px;
-	margin-left: 13px;
-	background-image: url(Images/repTrack.png);
-}
-	
-.butMin:hover #repickTrack {
-	margin-top: 13px;
-	margin-left: 13px;
-	background-image: url(Images/repTrackHo.png);
-}
-	
-#repickPlay {
-	margin-top: 13px;
-	margin-left: 13px;
-	background-image: url(Images/repPl.png);
-}
-	
-.butMin:hover #repickPlay {
-	margin-top: 13px;
-	margin-left: 13px;
-	background-image: url(Images/repPlHo.png);
+	background: url(Images/playHo.png) 90% no-repeat;
 }
 
 #rangeVal {

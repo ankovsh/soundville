@@ -31,9 +31,4 @@
             }
         });
     });
-
-    $(document).on("click", ".song", function () {
-        console.log($(this).data("id"));
-    });
-
 });

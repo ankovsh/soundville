@@ -10,20 +10,6 @@
 
     <script src="~/Scripts/Custom/Player.js"></script>
     <script src="http://www.wavesurfer.fm/dist/wavesurfer.min.js"></script>
-
-    var wavesurfer = Object.create(WaveSurfer);
-
-        wavesurfer.init({
-            container: document.querySelector('#wave'),
-            waveColor: 'violet',
-            progressColor: 'purple'
-        });
-
-        wavesurfer.on('ready', function() {
-            wavesurfer.play();
-        });
-
-        wavesurfer.load(songUrl);
 }
 
 <div class="form-container">
@@ -46,30 +32,29 @@
             <h3 class="station-name">@Model.Station.Name</h3>
         </div>
         <div class="buttons">
+            <div class="broadcast-wrap">
+                <a id="brcasting" href="#" title="Broadcasting">
+                    <div class="butMin">
+                        <div id="broadcasting" class="butIconMin"></div>
+                    </div>
+                </a>
+                <a id="sbrcasting" href="#" title="Stop broadcasting">
+                    <div class="butMin">
+                        <div id="stop-broadcasting" class="butIconMin"></div>
+                    </div>
+                </a>
+            </div>
             <a class="button" href="@Url.Action("SearchPage", "StationSong")">Search</a>
         </div>
     </div>
     <hr/>
 
-    <div id="wave"></div>
     <div class="player">
+        <div id="wave"></div>
         <div id="trackInfo">
             <div id="error"></div>
-            <div id="duration">0:00</div>
-            <div id="current">0:00</div>
-            <div id="progress"></div>
         </div>
         <div class="bar">
-            <a id="repick" href="#" title="Repeat track">
-                <div class="butMin">
-                    <div id="repickTrack" class="butIconMin"></div>
-                </div>
-            </a>
-            <a id="preTreck" href="#" title="Previous track">
-                <div class="butMin">
-                    <div id="prevTrack" class="butIconMin"></div>
-                </div>
-            </a>
             <a id="pl" href="#" title="Play">
                 <div class="but">
                     <div id="play" class="butIcon"></div>
@@ -78,16 +63,6 @@
             <a id="pa" href="#" title="Pause">
                 <div class="but">
                     <div id="pause" class="butIcon"></div>
-                </div>
-            </a>
-            <a id="nexTreck" href="#" title="Next track">
-                <div class="butMin">
-                    <div id="nextTrack" class="butIconMin"></div>
-                </div>
-            </a>
-            <a id="repickPl" href="#" title="Repeat playlist">
-                <div class="butMin">
-                    <div id="repickPlay" class="butIconMin"></div>
                 </div>
             </a>
         </div>
@@ -108,12 +83,12 @@
                 foreach (var song in Model.Songs)
                 {
                     <li>
-                        <a href="#">
+                        <a href="#" class="playlist-song">
                             <span class="song-artist">@song.Song.Artist</span>
                             <span class="song-title">@song.Song.Title</span>
                         </a>
                         <audio preload="none">
-                            <source src="@song.SongUrl"/>
+                            <source src="@song.SongUrl" />
                         </audio>
                     </li>
                     <hr/>

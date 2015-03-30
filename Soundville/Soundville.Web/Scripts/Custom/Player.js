@@ -1,4 +1,4 @@
-﻿var styleChange = { pause: {}, play: {}, repickTrack: {}, retickPlayList: {} };
+﻿var styleChange = { pause: {}, play: {}, broadcasting: {}, stopBroadcasting: {} };
 
 styleChange.play.change = function () {
     $('#pl > div').css({
@@ -26,36 +26,34 @@ styleChange.pause.recovery = function () {
     $('#pause').removeAttr('style');
 };
 
-styleChange.repickTrack.change = function () {
-    $('#repick > div').css({
+styleChange.broadcasting.change = function () {
+    $('#brcasting > div').css({
         'box-shadow': 'inset 0 4px 2px #414243, 0 0 10px #5466da',
         'border': '5px solid #5466da'
     });
-    $('#repickTrack').css('background-image', 'url(../../Content/Images/repTrackHo.png)');
+    $('#broadcasting').css('background-image', 'url(../../Content/Images/playHo.png)');
 };
 
-styleChange.repickTrack.recovery = function () {
-    $('#repick > div').removeAttr('style');
-    $('#repickTrack').removeAttr('style');
+styleChange.broadcasting.recovery = function () {
+    $('#brcasting > div').removeAttr('style');
+    $('#broadcasting').removeAttr('style');
 };
 
-styleChange.retickPlayList.change = function () {
-    $('#repickPl > div').css({
+styleChange.stopBroadcasting.change = function () {
+    $('#sbrcasting > div').css({
         'box-shadow': 'inset 0 4px 2px #414243, 0 0 10px #5466da',
         'border': '5px solid #5466da'
     });
-    $('#repickPlay').css('background-image', 'url(../../Content/Images/repPlHo.png)');
+    $('#stop-broadcasting').css('background-image', 'url(../../Content/Images/stopHo.png)');
 };
 
-styleChange.retickPlayList.recovery = function () {
-    $('#repickPl > div').removeAttr('style');
-    $('#repickPlay').removeAttr('style');
+styleChange.stopBroadcasting.recovery = function () {
+    $('#sbrcasting > div').removeAttr('style');
+    $('#stop-broadcasting').removeAttr('style');
 };
 
 $(document).ready(function () {
-    var dur, durM, val, mus, elem, prog;
-    var repick = 0;
-    var repickPl = 0;
+    var dur, durM, val, mus, prog;
 
     $(document).on("click", ".song-link", function () {
         $('#error').text('');
@@ -71,7 +69,7 @@ $(document).ready(function () {
         var artist = $(this).next().next().attr("artist");
         var title = $(this).next().next().next().attr("title");
 
-        var playingSong = $(".playing-song").text(artist + " - " + title);
+        $(".playing-song").text(artist + " - " + title);
     });
 
     $(document).on("timeupdate", ".audio-song", function () {
@@ -102,55 +100,42 @@ $(document).ready(function () {
         step: 1
     });
 
-    $('audio').on("timeupdate", function () {
-        d = this.duration;
-        c = this.currentTime;
-        curM = Math.floor(c / 60);
-        curS = Math.round(c - curM * 60);
-        $('#current').text(curM + ':' + curS);
-        $('#progress').slider({
-            max: d,
-            min: 0,
-            value: c
-        });
-    });
-
-    $('audio').on("playing", function () {
-        dur = this.duration;
-        durM = Math.floor(dur / 60) + ':' + Math.round((dur - Math.floor(dur / 60)) / 10);
-        $('#duration').text(durM);
-    });
-
-    $('audio').on("ended", function () {
-        mus = $(this).parent('li').next('li').first();
-        mus = mus.children('audio');
-        if (mus[0]) {
-            mus[0].play();
+    $('.playlist-song').click(function () {
+        $('#error').text('');
+        styleChange.play.change();
+        styleChange.pause.recovery();
+        if (mus) {
+            mus[0].pause();
+            mus[0].currentTime = 0;
         }
-        else {
-            if (repickPl == 1) {
-                mus = $('audio:first');
-                mus[0].play();
-            }
-            else {
-                $('#error').text('Конец списка воспроизведения!');
-                styleChange.play.recovery();
-            }
-        }
+        mus = $(this).next("audio");
+        mus[0].play();
+
+        //var wavesurfer = Object.create(WaveSurfer);
+
+        //wavesurfer.init({
+        //    container: document.querySelector('#wave'),
+        //    waveColor: 'violet',
+        //    progressColor: 'purple'
+        //});
+
+        //wavesurfer.on('ready', function () {
+        //    wavesurfer.play();
+        //});
+
+        //wavesurfer.load($(this).next().attr("src"));
     });
 
     //Кнопка воспроизведения
     $('#pl').click(function () {
         if (mus) {
             mus[0].play();
+            styleChange.play.change();
+            styleChange.pause.recovery();
         }
         else {
-            mus = $('audio:first');
-            mus[0].play();
+            $('#error').text('Сначала начните воспроизведение!');
         }
-        styleChange.play.change();
-        styleChange.pause.recovery();
-        $('#error').text('');
     });
 
     // Кнопка паузы
@@ -164,77 +149,16 @@ $(document).ready(function () {
         else {
             $('#error').text('Сначала начните воспроизведение!');
         }
-
     });
 
-    //Кнопка повтора трека
-    $('#repick').click(function () {
-        if (repick == 0) {
-            styleChange.repickTrack.change();
-            repick = 1;
-            mus[0].loop = true;
-        }
-        else {
-            styleChange.repickTrack.recovery();
-            repick = 0;
-            mus[0].loop = false;
-        }
+    $('#brcasting').click(function() {
+        styleChange.broadcasting.change();
+        styleChange.stopBroadcasting.recovery();
     });
 
-    //Кнопка следующий трек
-    $('#nexTreck').click(function () {
-        mus[0].pause();
-        mus[0].currentTime = 0;
-        mus = mus.parent('li').next('li').first();
-        mus = mus.children('audio');
-        if (mus[0]) {
-            mus[0].play();
-        }
-        else {
-            if (repickPl == 1) {
-                mus = $('audio:first');
-                mus[0].play();
-            }
-            else {
-                $('#error').text('Конец списка воспроизведения! Выберите трек!');
-                styleChange.play.recovery();
-                mus = null;
-            }
-        }
-    });
-
-    //Кнопка предыдущий трек
-    $('#preTreck').click(function () {
-        mus[0].pause();
-        mus[0].currentTime = 0;
-        mus = mus.parent('li').prev('li').last();
-        mus = mus.children('audio');
-        if (mus[0]) {
-            mus[0].play();
-        }
-        else {
-            if (repickPl == 1) {
-                mus = $('audio:last');
-                mus[0].play();
-            }
-            else {
-                $('#error').text('Начало списка воспроизведения! Выберите трек!');
-                styleChange.play.recovery();
-                mus = null;
-            }
-        }
-    });
-
-    //Кнопка повтора плейлиста
-    $('#repickPl').click(function () {
-        if (repickPl == 0) {
-            styleChange.retickPlayList.change();
-            repickPl = 1;
-        }
-        else {
-            styleChange.retickPlayList.recovery();
-            repickPl = 0;
-        }
+    $('#sbrcasting').click(function () {
+        styleChange.broadcasting.recovery();
+        styleChange.stopBroadcasting.change();
     });
 
     //Настройка ползунка громкости
