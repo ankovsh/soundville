@@ -309,7 +309,8 @@ a.button {
     background: #EEE;  
     font: 13px Tahoma, Arial, sans-serif;  
     color: #555;  
-    outline: none;  
+    outline: none;
+    margin-bottom: 30px;
 }  
   
 .search .search-input:focus { 
@@ -323,7 +324,7 @@ a.button {
     top: 0;  
     right: 0;  
     width: 37px;   
-    height: 100%;  
+    height: 37px;  
     cursor: pointer;  
     background: url(Images/searchDark.png) 50% no-repeat;  
     opacity: 0.5;
@@ -357,6 +358,13 @@ hr {
 
 .song-link:hover {
     cursor: pointer;
+}
+
+.playing-song {
+    margin-top: 50px;
+    float: right;
+    width: 300px;
+    height: 50px;
 }
 
 #wave {

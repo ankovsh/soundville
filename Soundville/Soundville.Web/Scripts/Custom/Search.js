@@ -15,8 +15,16 @@
                                     .attr("data-id", items[i].Id)
                                     .text(items[i].Artist + " - " + items[i].Title);
                     li.append(a);
-                    var audio = $("<audio>").attr("src", items[i].Url);
+                    var audio = $("<audio>").addClass("audio-song").attr("preload", "none");
                     li.append(audio);
+                    var source = $("<source>").attr("src", items[i].Url);
+                    audio.append(source);
+                    var artist = $("<span>").addClass("span-artist")
+                        .attr("artist", items[i].Artist);
+                    var title = $("<span>").addClass("span-title")
+                                           .attr("title", items[i].Title);
+                    li.append(artist);
+                    li.append(title);
                     var hr = $("<hr/>");
                     $("#search-result").append(hr);
                 }
@@ -28,21 +36,4 @@
         console.log($(this).data("id"));
     });
 
-    $(document).on("click", ".song-link", function () {
-        var wavesurfer = Object.create(WaveSurfer);
-
-        wavesurfer.init({
-            container: document.querySelector('#wave'),
-            waveColor: 'violet',
-            progressColor: 'purple'
-        });
-
-        wavesurfer.on('ready', function() {
-            wavesurfer.play();
-        });
-
-        var songUrl = $(this).next().attr("src");
-
-        wavesurfer.load(songUrl);
-    });
 });

@@ -57,6 +57,42 @@ $(document).ready(function () {
     var repick = 0;
     var repickPl = 0;
 
+    $(document).on("click", ".song-link", function () {
+        $('#error').text('');
+        styleChange.play.change();
+        styleChange.pause.recovery();
+        if (mus) {
+            mus[0].pause();
+            mus[0].currentTime = 0;
+        }
+        mus = $(this).next("audio");
+        mus[0].play();
+
+        var artist = $(this).next().next().attr("artist");
+        var title = $(this).next().next().next().attr("title");
+
+        var playingSong = $(".playing-song").text(artist + " - " + title);
+    });
+
+    $(document).on("timeupdate", ".audio-song", function () {
+        d = this.duration;
+        c = this.currentTime;
+        curM = Math.floor(c / 60);
+        curS = Math.round(c - curM * 60);
+        $('#current').text(curM + ':' + curS);
+        $('#progress').slider({
+            max: d,
+            min: 0,
+            value: c
+        });
+    });
+
+    $(document).on("playing", ".audio-song", function () {
+        dur = this.duration;
+        durM = Math.floor(dur / 60) + ':' + Math.round((dur - Math.floor(dur / 60)) / 10);
+        $('#duration').text(durM);
+    });
+
     //информация о треке
     $('#progress').slider({
         value: 0,

@@ -7,6 +7,23 @@
 @section Scripts
 {
     <script src="~/Scripts/Custom/Player.js"></script>
+
+    <script src="~/Scripts/Custom/Player.js"></script>
+    <script src="http://www.wavesurfer.fm/dist/wavesurfer.min.js"></script>
+
+    var wavesurfer = Object.create(WaveSurfer);
+
+        wavesurfer.init({
+            container: document.querySelector('#wave'),
+            waveColor: 'violet',
+            progressColor: 'purple'
+        });
+
+        wavesurfer.on('ready', function() {
+            wavesurfer.play();
+        });
+
+        wavesurfer.load(songUrl);
 }
 
 <div class="form-container">
@@ -34,7 +51,7 @@
     </div>
     <hr/>
 
-
+    <div id="wave"></div>
     <div class="player">
         <div id="trackInfo">
             <div id="error"></div>

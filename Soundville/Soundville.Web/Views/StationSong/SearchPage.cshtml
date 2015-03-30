@@ -6,9 +6,7 @@
 @section Scripts
 {
     <script src="~/Scripts/Custom/Search.js"></script>
-
     <script src="~/Scripts/Custom/Player.js"></script>
-    <script src="http://www.wavesurfer.fm/dist/wavesurfer.min.js"></script>
 }
 
 <div class="search">
@@ -16,7 +14,37 @@
     <input type="search" placeholder="поиск" class="search-input"/>
     <input type="submit" class="submit submit-search" value=""/>
 
-    <div id="wave"></div>
+    <div class="player">
+        <div id="trackInfo">
+            <div id="error"></div>
+            <div id="duration">0:00</div>
+            <div id="current">0:00</div>
+            <div id="progress"></div>
+        </div>
+        <div class="bar">
+            <a id="pl" href="#" title="Play">
+                <div class="but">
+                    <div id="play" class="butIcon"></div>
+                </div>
+            </a>
+            <a id="pa" href="#" title="Pause">
+                <div class="but">
+                    <div id="pause" class="butIcon"></div>
+                </div>
+            </a>
+            <div class="playing-song"></div>
+        </div>
+        <div class="range">
+            <div id="vol"></div>
+            <div id="rangeVal">
+                <div class="ui-slider-range ui-slider-range-min"></div>
+                <a class="ui-slider-handle" href="#"></a>
+            </div>
+            <div id="valNumb">
+                <div id="val"></div>
+            </div>
+        </div>
+    </div>
 
     <div id="search-song" class="playL">
         <ul id="search-result"></ul>
