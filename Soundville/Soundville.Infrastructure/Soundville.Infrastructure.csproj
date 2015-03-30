@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Constants\AppSettings.cs" />
     <Compile Include="Constants\ImageConstants.cs" />
+    <Compile Include="Constants\SongConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocialNetwork\VKHelper.cs" />
     <Compile Include="Utils\NameOf.cs" />

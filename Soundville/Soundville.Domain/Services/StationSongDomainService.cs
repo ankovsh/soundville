@@ -17,5 +17,15 @@ namespace Soundville.Domain.Services
         {
             return Context.StationSongs.Where(x => x.StationId == stationId).ToList();
         }
+
+        public void Save(StationSong stationSong)
+        {
+            if (stationSong.Id == 0)
+            {
+                Context.Set<StationSong>().Add(stationSong);
+            }
+
+            Context.SaveChanges();
+        }
     }
 }

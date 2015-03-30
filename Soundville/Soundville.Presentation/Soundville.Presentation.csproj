@@ -59,6 +59,7 @@
     <Compile Include="Models\Profiles\ProfileEditModel.cs" />
     <Compile Include="Models\Profiles\ProfileModel.cs" />
     <Compile Include="Models\Profiles\ProfileVkModel.cs" />
+    <Compile Include="Models\Songs\SongSaveModel.cs" />
     <Compile Include="Models\Stations\MyStationsModel.cs" />
     <Compile Include="Models\Stations\SongItem.cs" />
     <Compile Include="Models\Stations\StationEditModel.cs" />
@@ -68,8 +69,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\IPresentationService.cs" />
     <Compile Include="Services\Interfaces\IProfilePresentationService.cs" />
+    <Compile Include="Services\Interfaces\ISongPresentationService.cs" />
     <Compile Include="Services\Interfaces\IStationPresentationService.cs" />
     <Compile Include="Services\ProfilePresentationService.cs" />
+    <Compile Include="Services\SongPresentationService.cs" />
     <Compile Include="Services\StationPresentationService.cs" />
   </ItemGroup>
   <ItemGroup>

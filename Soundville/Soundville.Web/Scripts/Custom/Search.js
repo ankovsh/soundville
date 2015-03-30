@@ -12,7 +12,6 @@
                     var li = $("<li>").addClass("song");
                     $("#search-result").append(li);
                     var a = $("<a>").addClass("song-link")
-                                    .attr("data-id", items[i].Id)
                                     .text(items[i].Artist + " - " + items[i].Title);
                     li.append(a);
                     var audio = $("<audio>").addClass("audio-song").attr("preload", "none");
@@ -25,10 +24,27 @@
                                            .attr("title", items[i].Title);
                     li.append(artist);
                     li.append(title);
+                    var add = $("<a>").addClass("add-song-btn")
+                                      .attr("data-id", items[i].Id)
+                                      .attr("data-owner-id", items[i].OwnerId);
+                    li.append(add);
                     var hr = $("<hr/>");
                     $("#search-result").append(hr);
                 }
             }
         });
+    });
+});
+
+$(document).on("click", ".add-song-btn", function () {
+    $.ajax({
+        url: "/StationSong/AddSongAsync",
+        dataType: "json",
+        data: { songId: $(".add-song-btn").attr("data-id"), ownerId: $(".add-song-btn").attr("data-owner-id") },
+        success: function () {
+            var add = $("<a>").addClass("add-song-btn")
+                                    .attr("data-id", $(this))
+                                    .attr("data-owner-id", $(this));
+        }
     });
 });

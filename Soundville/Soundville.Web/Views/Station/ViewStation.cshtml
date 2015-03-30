@@ -44,7 +44,7 @@
                     </div>
                 </a>
             </div>
-            <a class="button" href="@Url.Action("SearchPage", "StationSong")">Search</a>
+            <a class="button" href="@Url.Action("SearchPage", "StationSong", new { id = Model.Station.Id })">Search</a>
         </div>
     </div>
     <hr/>
@@ -84,7 +84,7 @@
                 {
                     <li>
                         <a href="#" class="playlist-song">
-                            <span class="song-artist">@song.Song.Artist</span>
+                            <span class="song-artist">@song.Song.Artist - </span>
                             <span class="song-title">@song.Song.Title</span>
                         </a>
                         <audio preload="none">
