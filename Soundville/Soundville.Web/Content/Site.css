@@ -358,7 +358,6 @@ hr {
     position: inherit;
     top: 30px;
     left: 50%;
-    margin-left: -240px;
 }
 
 .song-link:hover {
@@ -374,6 +373,7 @@ hr {
 
 .add-song-btn {
     padding: 25px 20px 5px 20px;
+    margin-right: 10px;
     float: right;
     box-shadow: 0 1px rgba(255,255,255,.2) inset, 0 3px 5px rgba(0,1,6,.5), 0 0 1px 1px rgba(0,1,6,.2);
     border: none;
@@ -602,7 +602,9 @@ hr {
 }
 
 .playL {
+    overflow: auto;
 	width: 40%;
+    height: 768px;
 	position: absolute;
 	left: 50%;
 	top: 450px;
@@ -613,6 +615,7 @@ hr {
 	list-style-type: decimal;
 	font-family: "Comic Sans MS", cursive;
 	color:#5f73e9;
+    margin-left: 42px;
 }
 
 .playL li:hover {

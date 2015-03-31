@@ -11,7 +11,9 @@ namespace Soundville.Infrastructure.Constants
             "image/png"
         };
 
-        public const string AvatarDir = "/UserContent/avatars";
-        public const string StationAvatarDir = "/UserContent/stationAvatars";
+        public static string AvatarDir = "/UserContent/avatars";
+        public static string AvatarUrl = AppSettings.SiteUrl + AvatarDir;
+        public static string StationAvatarDir = "/UserContent/stationAvatars";
+        public static string StationAvatarUrl = AppSettings.SiteUrl + StationAvatarDir;
     }
 }

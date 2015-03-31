@@ -25,7 +25,7 @@ namespace Soundville.Web.Controllers
             StationEditModel model = _stationPresentationService.GetStationEditModel(id);
             ViewBag.ImageSrc = model.ImageFileName.IsNullOrEmpty()
                 ? "/Content/Images/male-default-avatar.png"
-                : Path.Combine(ImageConstants.StationAvatarDir, model.ImageFileName);
+                : Path.Combine(ImageConstants.StationAvatarUrl, model.ImageFileName);
 
             return View(model);
         }
@@ -64,7 +64,7 @@ namespace Soundville.Web.Controllers
         {
             MyStationsModel model = _stationPresentationService.GetMyStationsModel(User.Identity.Name);
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
-            ViewBag.PartialImageUrl = ImageConstants.StationAvatarDir + "/";
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
             return View(model);
         }
 
@@ -74,7 +74,7 @@ namespace Soundville.Web.Controllers
             var model = _stationPresentationService.GetViewStationModel(id);
             ViewBag.Title = model.Station.Name;
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
-            ViewBag.PartialImageUrl = ImageConstants.StationAvatarDir + "/";
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
 
             return View(model);
         }

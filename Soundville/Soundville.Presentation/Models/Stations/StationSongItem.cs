@@ -1,4 +1,6 @@
-﻿using Soundville.Domain.Models;
+﻿using System.IO;
+using Soundville.Domain.Models;
+using Soundville.Infrastructure.Constants;
 
 namespace Soundville.Presentation.Models.Stations
 {
@@ -14,7 +16,7 @@ namespace Soundville.Presentation.Models.Stations
         {
             Song = new SongItem(stationSong.Song);
             Id = stationSong.Id;
-            SongUrl = stationSong.SongUrl;
+            SongUrl = Path.Combine(SongConstants.SongUrl, stationSong.FileName);
             FileName = stationSong.FileName;
             Duration = stationSong.Duration;
         }

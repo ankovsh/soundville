@@ -27,7 +27,7 @@ namespace Soundville.Web.Controllers
             {
                 ViewBag.ImageSrc = "/Content/Images/male-default-avatar.png";
             }
-            ViewBag.ImageSrc = Path.Combine(ImageConstants.AvatarDir, model.ImageFileName);
+            ViewBag.ImageSrc = Path.Combine(ImageConstants.AvatarUrl, model.ImageFileName);
             return View(model);
         }
 

@@ -25,7 +25,7 @@ namespace Soundville.Web.Controllers
 
         public async Task<ActionResult> SearchPage(int id, bool? isAuthenticated, string code)
         {
-            var redirectUrl = AppSettings.SiteUrl + "StationSong/SearchPage?id=" + id + "&isAuthenticated=true";
+            var redirectUrl = AppSettings.SiteUrl + "StationSong/SearchPage/" + id + "?isAuthenticated=true";
             if (isAuthenticated.HasValue && isAuthenticated.Value)
             {
                 var token = await VkHelper.GetTokenAsync(code, redirectUrl);
@@ -53,7 +53,7 @@ namespace Soundville.Web.Controllers
 
         public async Task<ActionResult> AddSongAsync(int stationId, int songId, int ownerVkId)
         {
-            var token = _profilePresentationService.GetTokenByEmail(User.Identity.Name);
+           var token = _profilePresentationService.GetTokenByEmail(User.Identity.Name);
             var api = VkHelper.GetApi(token);
 
             var song = (await api.Audio.GetById(false, ownerVkId + "_" + songId)).FirstOrDefault();

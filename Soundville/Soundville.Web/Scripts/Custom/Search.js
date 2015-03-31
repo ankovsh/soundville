@@ -40,7 +40,11 @@ $(document).on("click", ".add-song-btn", function () {
     $.ajax({
         url: "/StationSong/AddSongAsync",
         dataType: "json",
-        data: { songId: $(".add-song-btn").attr("data-id"), ownerId: $(".add-song-btn").attr("data-owner-id") },
+        data: {
+            stationId: $("#StationId").val(),
+            songId: $(this).attr("data-id"),
+            ownerVkId: $(this).attr("data-owner-id")
+        },
         success: function () {
             var add = $("<a>").addClass("add-song-btn")
                                     .attr("data-id", $(this))

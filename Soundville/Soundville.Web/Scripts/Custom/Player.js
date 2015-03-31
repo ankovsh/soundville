@@ -109,21 +109,21 @@ $(document).ready(function () {
             mus[0].currentTime = 0;
         }
         mus = $(this).next("audio");
-        mus[0].play();
+        //mus[0].play();
 
-        //var wavesurfer = Object.create(WaveSurfer);
+        var wavesurfer = Object.create(WaveSurfer);
 
-        //wavesurfer.init({
-        //    container: document.querySelector('#wave'),
-        //    waveColor: 'violet',
-        //    progressColor: 'purple'
-        //});
+        wavesurfer.init({
+            container: document.querySelector('#wave'),
+            waveColor: 'violet',
+            progressColor: 'purple'
+        });
 
-        //wavesurfer.on('ready', function () {
-        //    wavesurfer.play();
-        //});
+        wavesurfer.on('ready', function () {
+            wavesurfer.play();
+        });
 
-        //wavesurfer.load($(this).next().attr("src"));
+        wavesurfer.load($(this).next().children().attr("src"));
     });
 
     //Кнопка воспроизведения

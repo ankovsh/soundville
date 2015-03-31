@@ -2,6 +2,7 @@
 {
     public class SongConstants
     {
-        public const string SongDir = "/UserContent/songs";
+        public static string SongDir = "/UserContent/songs";
+        public static string SongUrl = AppSettings.SiteUrl + SongDir;
     }
 }

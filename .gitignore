@@ -9,3 +9,4 @@ _ReSharper.*
 packages
 /Soundville/Soundville.Web/UserContent/avatars
 /Soundville/Soundville.Web/UserContent/stationAvatars
+/Soundville/Soundville.Web/UserContent/songs
