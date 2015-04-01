@@ -53,7 +53,15 @@ styleChange.stopBroadcasting.recovery = function () {
 };
 
 $(document).ready(function () {
-    var dur, durM, val, mus, prog;
+    var dur, durM, val, mus, prog, playNowSrc, pauseNow;
+
+    var wavesurfer = Object.create(WaveSurfer);
+
+    wavesurfer.init({
+        container: document.querySelector('#wave'),
+        waveColor: '#7588e1',
+        progressColor: '#5466da'
+    });
 
     $(document).on("click", ".song-link", function () {
         $('#error').text('');
@@ -100,30 +108,21 @@ $(document).ready(function () {
         step: 1
     });
 
-    $('.playlist-song').click(function () {
-        $('#error').text('');
-        styleChange.play.change();
-        styleChange.pause.recovery();
-        if (mus) {
-            mus[0].pause();
-            mus[0].currentTime = 0;
+    $('.play-song').click(function () {
+
+        var src = $(this).next().next().children().attr("src");
+
+        if (playNowSrc === undefined || playNowSrc !== src) {
+            wavesurfer.load(src);
+            playNowSrc = src;
         }
-        mus = $(this).next("audio");
-        //mus[0].play();
-
-        var wavesurfer = Object.create(WaveSurfer);
-
-        wavesurfer.init({
-            container: document.querySelector('#wave'),
-            waveColor: 'violet',
-            progressColor: 'purple'
-        });
 
         wavesurfer.on('ready', function () {
             wavesurfer.play();
+            playNowSrc = src;
         });
 
-        wavesurfer.load($(this).next().children().attr("src"));
+
     });
 
     //Кнопка воспроизведения
