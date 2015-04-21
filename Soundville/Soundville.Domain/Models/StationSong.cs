@@ -12,5 +12,6 @@ namespace Soundville.Domain.Models
         public string SongUrl { get; set; }
         public string FileName { get; set; }
         public int Duration { get; set; }
+        public int Position { get; set; }
     }
 }

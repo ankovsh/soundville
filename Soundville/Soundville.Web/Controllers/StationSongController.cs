@@ -57,7 +57,7 @@ namespace Soundville.Web.Controllers
             var api = VkHelper.GetApi(token);
 
             var song = (await api.Audio.GetById(false, ownerVkId + "_" + songId)).FirstOrDefault();
-
+            //TODO:: Проверка нахождения выбранной песни на сервере
             const string songExtension = ".mp3";
             string newSongName = Guid.NewGuid() + songExtension;
             var songPath = Path.Combine(Server.MapPath(SongConstants.SongDir), newSongName);

@@ -33,6 +33,9 @@ namespace Soundville.Presentation.Services
             stationSong.FileName = model.FileName;
             stationSong.SongUrl = model.SongUrl;
 
+            var lastSongId = _stationSongDomainService.GetLastSongPosition(model.StationId);
+            stationSong.Position = lastSongId + 1;
+
             _stationSongDomainService.Save(stationSong);
         }
     }
