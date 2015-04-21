@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Domain", "Soundv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Presentation", "Soundville.Presentation\Soundville.Presentation.csproj", "{17D9F70F-E82B-4012-AD14-BC8F710DD274}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sounville.Configuration", "Sounville.Configuration\Sounville.Configuration.csproj", "{4F0B403A-1FD1-42B7-AC18-FF182714D9B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Configuration", "Sounville.Configuration\Soundville.Configuration.csproj", "{4F0B403A-1FD1-42B7-AC18-FF182714D9B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundville.Infrastructure", "Soundville.Infrastructure\Soundville.Infrastructure.csproj", "{66CD6ED6-B691-4CD5-B361-B0244A884114}"
 EndProject

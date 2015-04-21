@@ -1,11 +1,15 @@
 ﻿using System;
 using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Mvc;
 using Castle.Core.Internal;
 using Soundville.Infrastructure.Constants;
 using Soundville.Infrastructure.Utils;
 using Soundville.Presentation.Models.Stations;
 using Soundville.Presentation.Services.Interfaces;
+using Soundville.Presentation.Streaming;
 
 namespace Soundville.Web.Controllers
 {
@@ -77,6 +81,19 @@ namespace Soundville.Web.Controllers
             ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
 
             return View(model);
+        }
+
+        [HttpGet]
+        public void StartStream(int id)
+        {
+            var mp3StreamingPool = Mp3StreamingPool.Instance;
+            if (!mp3StreamingPool.IsStreamExist(id))
+            {
+                mp3StreamingPool.StartMp3Streaming(id, Server.MapPath(SongConstants.SongDir), 128);
+            }
+
+            var mp3Stream = mp3StreamingPool.GetStream(id);
+            mp3Stream.PlaySong();
         }
     }
 }

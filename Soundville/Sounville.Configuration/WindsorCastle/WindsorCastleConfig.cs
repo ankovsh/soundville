@@ -1,13 +1,13 @@
-﻿using Castle.MicroKernel.Registration;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using Soundville.Configuration.WindsorCastle.Installers;
+using Soundville.Configuration.WindsorCastle.Plumbing;
 using Soundville.Domain.Installers;
 using Soundville.Infrastructure.WindsorCastle;
 using Soundville.Presentation.Installers;
-using Sounville.Configuration.WindsorCastle.Installers;
-using Sounville.Configuration.WindsorCastle.Plumbing;
 
-namespace Sounville.Configuration.WindsorCastle
+namespace Soundville.Configuration.WindsorCastle
 {
     public class WindsorCastleConfig
     {
@@ -18,6 +18,7 @@ namespace Sounville.Configuration.WindsorCastle
 
             container.Install(
                 new ControllerInstaller(),
+                new ApiControllerInstaller(),
                 new PresentationServiceInstaller(),
                 new DomainServiceInstaller(),
                 new DbContextInstaller());

@@ -40,9 +40,16 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="NAudio">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Lame">
+      <HintPath>..\packages\NAudio.Lame.1.0.2\lib\net20\NAudio.Lame.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,6 +81,13 @@
     <Compile Include="Services\ProfilePresentationService.cs" />
     <Compile Include="Services\SongPresentationService.cs" />
     <Compile Include="Services\StationPresentationService.cs" />
+    <Compile Include="Streaming\Mp3Stream.cs" />
+    <Compile Include="Streaming\MP3StreamingPool.cs" />
+    <Compile Include="Streaming\MyMemoryStream.cs" />
+    <Compile Include="Streaming\SoundStream.cs" />
+    <Compile Include="Streaming\StreamingPlaybackState.cs" />
+    <Compile Include="Streaming\ToMp3StreamConverter.cs" />
+    <Compile Include="Streaming\ToRawWaveStreamConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Soundville.Domain\Soundville.Domain.csproj">
@@ -88,7 +102,14 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="libmp3lame.32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libmp3lame.64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

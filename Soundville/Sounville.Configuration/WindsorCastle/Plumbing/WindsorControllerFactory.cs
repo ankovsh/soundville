@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
 
-namespace Sounville.Configuration.WindsorCastle.Plumbing
+namespace Soundville.Configuration.WindsorCastle.Plumbing
 {
     public class WindsorControllerFactory : DefaultControllerFactory
     {
