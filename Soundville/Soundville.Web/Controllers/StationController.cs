@@ -92,5 +92,22 @@ namespace Soundville.Web.Controllers
             var mp3Stream = mp3StreamingPool.GetStream(id);
             mp3Stream.PlaySong();
         }
+
+        [HttpGet]
+        public ActionResult SearchStations()
+        {
+            MySearchStationsModel model = _stationPresentationService.GetSearchStationsModel();
+            ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
+            return View(model);
+        }
+
+        public ActionResult Search(string searchString)
+        {
+            var stations = _stationPresentationService.GetSearchStationsModelByName(searchString);
+            ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
+            return Json(stations, JsonRequestBehavior.AllowGet);
+        }
     }
 }

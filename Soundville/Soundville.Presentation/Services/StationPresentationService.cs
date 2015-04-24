@@ -68,5 +68,21 @@ namespace Soundville.Presentation.Services
             var model = new ViewStationModel(stationItem, stationSongItems);
             return model;
         }
+
+        public MySearchStationsModel GetSearchStationsModel()
+        {
+            var stations = _stationDomainService.GetAllStations();
+            var model = new MySearchStationsModel(stations);
+
+            return model;
+        }
+
+        public MySearchStationsModel GetSearchStationsModelByName(string name) 
+        {
+            var stations = _stationDomainService.GetStationsByName(name);
+            var model = new MySearchStationsModel(stations);
+
+            return model;
+        }
     }
 }

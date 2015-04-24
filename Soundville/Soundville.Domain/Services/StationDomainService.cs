@@ -23,6 +23,16 @@ namespace Soundville.Domain.Services
             return Context.Stations.Where(x => x.User.Email == userEmail).ToList();
         }
 
+        public IList<Station> GetAllStations()
+        {
+            return Context.Stations.Select(x => x).ToList();
+        }
+
+        public IList<Station> GetStationsByName(string name)
+        {
+            return Context.Stations.Where(x => x.Name == name).ToList();
+        }
+
         public void Save(Station station)
         {
             if (station.Id == 0)

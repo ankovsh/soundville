@@ -2,16 +2,19 @@
     <li class="main-menu">
         <a> Main Menu</a>
         <a href="@Url.Action("Edit", "Profile")">Edit profile</a>
+        <a href="@Url.Action("SearchStations", "Station")">Search stations</a>
         <a href ="@Url.Action("LogOff", "Account")">Logoff</a>
 </li>
     <li class="station">
         <a>Music Stations</a>
         <a href="@Url.Action("Edit", "Station")">Create new station</a>
-        <a href="@Url.Action("MyStations", "Station")">All stations</a>
+        <a href="@Url.Action("MyStations", "Station")">My stations</a>
+        <a href="">Signed station</a>
     </li>
     <li class="about">
         <a>About Soundville</a>
-        <a href ="@Url.Action("About", "Home")">About</a>
+        <a href="@Url.Action("About", "Home")">About</a>
+        <a href=""></a>
         <a href="@Url.Action("GetInTouch", "Home")">Get in touch</a>
     </li>
 </ul>

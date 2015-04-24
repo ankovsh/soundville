@@ -383,6 +383,22 @@ hr {
     border-radius: 6px;
 }
 
+a.station-name {
+    text-decoration: none;
+    float: left;
+    padding-left: 30px;
+}
+
+h3.search-station-name {
+    font-size: 1em;
+	color: #000000;
+    font-family: PTSans, Arial;
+}
+
+h3.search-station-name:hover {
+	text-shadow: 0 3px 5px rgba(0,1,6,.5);
+}
+
 /****Player****/
 
 .play-song {

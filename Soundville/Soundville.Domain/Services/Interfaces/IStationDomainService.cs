@@ -7,6 +7,8 @@ namespace Soundville.Domain.Services.Interfaces
     {
         Station GetStationById(int id);
         IList<Station> GetAllStationsByUser(string userEmail);
+        IList<Station> GetAllStations();
+        IList<Station> GetStationsByName(string name);
         void Save(Station station);
     }
 }

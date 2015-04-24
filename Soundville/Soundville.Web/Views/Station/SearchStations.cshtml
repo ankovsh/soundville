@@ -1,0 +1,48 @@
+﻿@model Soundville.Presentation.Models.Stations.MySearchStationsModel
+
+@{
+    ViewBag.Title = "Search Stations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/Custom/SearchStations.js"></script>
+}
+
+<div class="form-container">
+
+    <div class="search">
+        <input type="search" placeholder="search" class="search-input" />
+        <input type="submit" class="submit submit-search" value="" />
+    </div>
+    <div class="station-container">
+        @{
+            foreach (var station in Model.Stations)
+            {
+                <div class="wrap-station">
+                    <div class="station-info">
+                        @{
+                string imageSrc;
+                if (station.ImageFileName != null)
+                {
+                    imageSrc = ViewBag.PartialImageUrl + station.ImageFileName;
+                }
+                else
+                {
+                    imageSrc = @ViewBag.DefaultImageSrc;
+                }
+                        }
+                        <img class="station-avatar" src=@imageSrc alt="" />
+                        <a class="station-name" href="@Url.Action("ViewStation", "Station", new {id = station.Id})"><h3 class="search-station-name">@station.Name</h3></a>
+                    </div>
+                    <div class="buttons">
+                        <a class="button" href="">Signed station</a>
+                    </div>
+                </div>
+                <hr />
+            }
+        }
+
+    </div>
+</div>
