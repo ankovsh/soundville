@@ -12,6 +12,12 @@ namespace Soundville.Domain.EntityFramework.Configurations
             HasMany(x => x.StationSongs)
                 .WithRequired(x => x.Station)
                 .HasForeignKey(x => x.StationId);
+
+            HasMany(x => x.Subscribers)
+                .WithMany(x => x.SignedStations)
+                .Map(x => x.MapLeftKey("StationId")
+                           .MapRightKey("UserId")
+                           .ToTable("Subscribers"));
         }
     }
 }

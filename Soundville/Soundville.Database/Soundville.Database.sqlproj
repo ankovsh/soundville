@@ -66,6 +66,7 @@
     <Build Include="dbo\Tables\Stations.sql" />
     <Build Include="dbo\Tables\Songs.sql" />
     <Build Include="dbo\Tables\StationSongs.sql" />
+    <Build Include="dbo\Tables\Subscribers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="localdb.publish.xml" />

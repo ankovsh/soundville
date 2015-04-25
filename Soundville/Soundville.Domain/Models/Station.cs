@@ -11,5 +11,6 @@ namespace Soundville.Domain.Models
         public int UserId { get; set; }
         public virtual User User { get; set; }
         public virtual IList<StationSong> StationSongs { get; set; }
+        public virtual IList<User> Subscribers { get; set; }
     }
 }

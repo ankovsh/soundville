@@ -12,5 +12,6 @@ namespace Soundville.Domain.Models
         public string ImageFileName { get; set; }
         public string PasswordHash { get; set; }
         public virtual IList<Station> Stations { get; set; }
+        public virtual IList<Station> SignedStations { get; set; }
     }
 }

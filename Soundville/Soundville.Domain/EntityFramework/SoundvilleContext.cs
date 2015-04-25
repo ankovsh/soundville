@@ -10,7 +10,7 @@ namespace Soundville.Domain.EntityFramework
         public DbSet<User> Users { get; set; }
         public DbSet<Station> Stations { get; set; }
         public DbSet<Song> Songs { get; set; }
-        public DbSet<StationSong> StationSongs { get; set; } 
+        public DbSet<StationSong> StationSongs { get; set; }
 
         public SoundvilleContext()
             : base("SoundvilleContext")
