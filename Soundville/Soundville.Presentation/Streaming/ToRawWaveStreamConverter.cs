@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using NAudio.Wave;
-using Soundville.Domain.Models;
 using Soundville.Domain.Services.Interfaces;
-using Soundville.Infrastructure.Constants;
 using Soundville.Infrastructure.WindsorCastle;
 
 namespace Soundville.Presentation.Streaming

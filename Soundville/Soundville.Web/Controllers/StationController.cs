@@ -94,6 +94,15 @@ namespace Soundville.Web.Controllers
         }
 
         [HttpGet]
+        public void StopStream(int id)  
+        {
+            var mp3StreamingPool = Mp3StreamingPool.Instance;
+
+            var mp3Stream = mp3StreamingPool.GetStream(id);
+            mp3Stream.Stop();
+        }
+
+        [HttpGet]
         public ActionResult SearchStations()
         {
             MySearchStationsModel model = _stationPresentationService.GetSearchStationsModel();

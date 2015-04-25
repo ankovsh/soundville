@@ -5,9 +5,9 @@ namespace Soundville.Web.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        public ViewResult Index()
+        public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("MyStations", "Station");
         }
 
         public ViewResult About()
