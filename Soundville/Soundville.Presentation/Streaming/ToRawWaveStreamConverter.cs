@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using NAudio.Wave;
+using Soundville.Domain.Models;
+using Soundville.Domain.Services;
 using Soundville.Domain.Services.Interfaces;
 using Soundville.Infrastructure.WindsorCastle;
 
@@ -16,15 +18,17 @@ namespace Soundville.Presentation.Streaming
         private WaveFormatConversionStream waveFormatConversionStream;
         private WaveFormat _newFormat;
         private Mp3Stream mp3Stream;
+        private string _songDirPath;
 
         public ToRawWaveStreamConverter(Mp3Stream mp3Stream, int streamId, string songDirPath, WaveFormat newFormat)
         {
             _stationDomainService = IoC.ContainerInstance.Resolve<IStationDomainService>();
-            _stationSongDomainService = IoC.ContainerInstance.Resolve<IStationSongDomainService>();
+            _stationSongDomainService = new StationSongDomainService();
             this.streamId = streamId;
             position = 1;
             var stationSong = _stationSongDomainService.GetByPosition(streamId, position);
-            string songPath = Path.Combine(songDirPath, stationSong.FileName);
+            _songDirPath = songDirPath;
+            string songPath = GetSongPath(stationSong.FileName);
             mediaFoundationReader = new MediaFoundationReader(songPath);
             _newFormat = newFormat;
             waveFormatConversionStream = new WaveFormatConversionStream(_newFormat, mediaFoundationReader);
@@ -40,11 +44,13 @@ namespace Soundville.Presentation.Streaming
                 if ((waveFormatConversionStream.Position == waveFormatConversionStream.Length || readCount == 0))
                 {
                     var stationSong = _stationSongDomainService.GetByPosition(streamId, ++position);
+                    
                     if (stationSong == null)
                     {
                         return 0;
                     }
 
+                    RestartReading(stationSong);
                     mp3Stream.ResetLastSongByteCount();
                 }
 
@@ -68,6 +74,22 @@ namespace Soundville.Presentation.Streaming
         {
             waveFormatConversionStream.Close();
             base.Dispose(disposing);
+        }
+
+        private void RestartReading(StationSong stationSong)
+        {
+            if (waveFormatConversionStream != null)
+            {
+                waveFormatConversionStream.Close();
+            }
+
+            mediaFoundationReader = new MediaFoundationReader(GetSongPath(stationSong.FileName));
+            waveFormatConversionStream = new WaveFormatConversionStream(_newFormat, mediaFoundationReader);
+        }
+
+        private string GetSongPath(string fileName)
+        {
+            return Path.Combine(_songDirPath, fileName);
         }
     }
 }

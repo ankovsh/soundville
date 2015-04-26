@@ -5,7 +5,7 @@ using Soundville.Domain.Models;
 
 namespace Soundville.Domain.EntityFramework
 {
-    class SoundvilleContext : DbContext, ISoundvilleContext
+    public class SoundvilleContext : DbContext, ISoundvilleContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Station> Stations { get; set; }

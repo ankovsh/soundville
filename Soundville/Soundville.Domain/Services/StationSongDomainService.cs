@@ -9,6 +9,11 @@ namespace Soundville.Domain.Services
 {
     public class StationSongDomainService : DomainService<StationSong>, IStationSongDomainService
     {
+        public StationSongDomainService()
+            : base(new SoundvilleContext())
+        {
+        }
+
         public StationSongDomainService(ISoundvilleContext soundvilleContext) 
             : base(soundvilleContext)
         {

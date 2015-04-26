@@ -104,6 +104,19 @@ namespace Soundville.Web.Controllers
             mp3Stream.Stop();
         }
 
+        public ActionResult StartStation(int id)
+        {
+            StartStream(id);
+            return Redirect(
+                            Url.RouteUrl("DefaultApi",
+                            new
+                            {
+                                httproute = "",
+                                controller = "Stations",
+                                id = id
+                            }));
+        }
+
         [HttpGet]
         public ActionResult SearchStations()
         {
