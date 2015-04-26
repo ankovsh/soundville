@@ -263,7 +263,7 @@
     <None Include="Views\Profile\Edit.cshtml" />
     <None Include="Views\StationSong\SearchPage.cshtml" />
     <None Include="Views\Station\Edit.cshtml" />
-    <Content Include="Views\Station\MyStations.cshtml" />
+    <Content Include="Views\Station\StationList.cshtml" />
     <Content Include="Views\Station\SearchStations.cshtml" />
     <None Include="Views\Station\ViewStation.cshtml" />
   </ItemGroup>

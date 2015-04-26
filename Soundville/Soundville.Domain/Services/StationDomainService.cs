@@ -33,6 +33,16 @@ namespace Soundville.Domain.Services
             return Context.Stations.Where(x => x.Name == name).ToList();
         }
 
+        public bool IsOwner(int id, string userEmail)
+        {
+            return Context.Stations.Any(x => x.User.Email == userEmail && x.Id == id);
+        }
+
+        public IList<Station> GetSignedStationsBySubscriber(string subscriberEmail)
+        {
+            return Context.Stations.Where(s => s.Subscribers.Any(u => u.Email == subscriberEmail)).ToList();
+        }
+
         public void Save(Station station)
         {
             if (station.Id == 0)

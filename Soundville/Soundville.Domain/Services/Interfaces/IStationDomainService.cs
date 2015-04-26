@@ -9,6 +9,8 @@ namespace Soundville.Domain.Services.Interfaces
         IList<Station> GetAllStationsByUser(string userEmail);
         IList<Station> GetAllStations();
         IList<Station> GetStationsByName(string name);
+        bool IsOwner(int id, string userEmail);
+        IList<Station> GetSignedStationsBySubscriber(string subscriberEmail);
         void Save(Station station);
     }
 }

@@ -23,7 +23,7 @@ namespace Soundville.Web.Controllers
         [HttpGet]   
         public ActionResult Edit(int? id)
         {
-            StationEditModel model = _stationPresentationService.GetStationEditModel(id);
+            var model = _stationPresentationService.GetStationEditModel(id);
             ViewBag.ImageSrc = model.ImageFileName.IsNullOrEmpty()
                 ? "/Content/Images/male-default-avatar.png"
                 : Path.Combine(ImageConstants.StationAvatarUrl, model.ImageFileName);
@@ -49,8 +49,8 @@ namespace Soundville.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                string imageExtension = Path.GetExtension(model.Image.FileName);
-                string newImageName = Guid.NewGuid() + imageExtension;
+                var imageExtension = Path.GetExtension(model.Image.FileName);
+                var newImageName = Guid.NewGuid() + imageExtension;
                 var imagePath = Path.Combine(Server.MapPath(ImageConstants.StationAvatarDir), newImageName);
                 model.Image.SaveAs(imagePath);
                 _stationPresentationService.Save(model, newImageName, User.Identity.Name);
@@ -63,10 +63,12 @@ namespace Soundville.Web.Controllers
         [HttpGet]
         public ActionResult MyStations()
         {
-            MyStationsModel model = _stationPresentationService.GetMyStationsModel(User.Identity.Name);
+            var model = _stationPresentationService.GetMyStationsModel(User.Identity.Name);
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
             ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
-            return View(model);
+            ViewBag.Title = "My stations";
+
+            return View("StationList", model);
         }
 
         [HttpGet]
@@ -105,9 +107,10 @@ namespace Soundville.Web.Controllers
         [HttpGet]
         public ActionResult SearchStations()
         {
-            MySearchStationsModel model = _stationPresentationService.GetSearchStationsModel();
+            var model = _stationPresentationService.GetSearchStationsModel();
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
             ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
+
             return View(model);
         }
 
@@ -116,7 +119,27 @@ namespace Soundville.Web.Controllers
             var stations = _stationPresentationService.GetSearchStationsModelByName(searchString);
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
             ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
+
             return Json(stations, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SignUpForStation(int id)
+        {
+            if(!_stationPresentationService.IsOwner(id, User.Identity.Name))
+                _stationPresentationService.SaveSubscriber(id, User.Identity.Name);
+
+            return RedirectToAction("SignedStations");
+        }
+
+        [HttpGet]
+        public ActionResult SignedStations()
+        {
+            var model = _stationPresentationService.GetSignedStationsModel(User.Identity.Name);
+            ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
+            ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";
+            ViewBag.Title = "Signed stations";
+
+            return View("StationList", model);
         }
     }
 }

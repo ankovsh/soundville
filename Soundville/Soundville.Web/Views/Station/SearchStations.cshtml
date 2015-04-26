@@ -37,7 +37,7 @@
                         <a class="station-name" href="@Url.Action("ViewStation", "Station", new {id = station.Id})"><h3 class="search-station-name">@station.Name</h3></a>
                     </div>
                     <div class="buttons">
-                        <a class="button" href="">Signed station</a>
+                        <a class="button" href="@Url.Action("SignUpForStation", "Station", new {id = station.Id})">Signed station</a>
                     </div>
                 </div>
                 <hr />

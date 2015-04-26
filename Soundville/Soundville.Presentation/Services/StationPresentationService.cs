@@ -44,10 +44,10 @@ namespace Soundville.Presentation.Services
             _stationDomainService.Save(station);
         }
 
-        public MyStationsModel GetMyStationsModel(string userEmail)
+        public StationListModel GetMyStationsModel(string userEmail)
         {
             var stations = _stationDomainService.GetAllStationsByUser(userEmail);
-            var model = new MyStationsModel(stations);
+            var model = new StationListModel(stations);
 
             return model;
         }
@@ -81,6 +81,27 @@ namespace Soundville.Presentation.Services
         {
             var stations = _stationDomainService.GetStationsByName(name);
             var model = new MySearchStationsModel(stations);
+
+            return model;
+        }
+
+        public bool IsOwner(int stationId, string userEmail)
+        {
+            return _stationDomainService.IsOwner(stationId, userEmail);
+        }
+
+        public void SaveSubscriber(int stationId, string userEmail)
+        {
+            var user = _userDomainService.GetByEmail(userEmail);
+            var station = _stationDomainService.GetStationById(stationId);
+            station.Subscribers.Add(user);
+            _stationDomainService.Save(station);
+        }
+
+        public StationListModel GetSignedStationsModel(string userEmail)
+        {
+            var stations = _stationDomainService.GetSignedStationsBySubscriber(userEmail);
+            var model = new StationListModel(stations);
 
             return model;
         }

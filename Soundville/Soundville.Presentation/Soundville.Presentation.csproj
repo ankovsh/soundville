@@ -68,7 +68,7 @@
     <Compile Include="Models\Profiles\ProfileVkModel.cs" />
     <Compile Include="Models\Songs\SongSaveModel.cs" />
     <Compile Include="Models\Stations\MySearchStationsModel.cs" />
-    <Compile Include="Models\Stations\MyStationsModel.cs" />
+    <Compile Include="Models\Stations\StationListModel.cs" />
     <Compile Include="Models\Stations\SongItem.cs" />
     <Compile Include="Models\Stations\StationEditModel.cs" />
     <Compile Include="Models\Stations\StationItem.cs" />

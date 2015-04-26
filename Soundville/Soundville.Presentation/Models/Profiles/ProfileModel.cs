@@ -13,6 +13,6 @@ namespace Soundville.Presentation.Models.Profiles
         public string Email { get; set; }
         public HttpPostedFileBase Image { get; set; }
         public string ImageFileName { get; set; }
-        public IList<StationItem> StationModels { get; set; }  
+        public IList<StationItem> StationModels { get; set; }
     }
 }
