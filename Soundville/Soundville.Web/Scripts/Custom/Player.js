@@ -53,15 +53,7 @@ styleChange.stopBroadcasting.recovery = function () {
 };
 
 $(document).ready(function () {
-    var dur, durM, val, mus, prog, playNowSrc, pauseNow;
-
-    var wavesurfer = Object.create(WaveSurfer);
-
-    wavesurfer.init({
-        container: document.querySelector('#wave'),
-        waveColor: '#7588e1',
-        progressColor: '#5466da'
-    });
+    var dur, durM, val, mus, prog;
 
     $(document).on("click", ".song-link", function () {
         $('#error').text('');
@@ -106,23 +98,6 @@ $(document).ready(function () {
         range: "min",
         animate: true,
         step: 1
-    });
-
-    $('.play-song').click(function () {
-
-        var src = $(this).next().next().children().attr("src");
-
-        if (playNowSrc === undefined || playNowSrc !== src) {
-            wavesurfer.load(src);
-            playNowSrc = src;
-        }
-
-        wavesurfer.on('ready', function () {
-            wavesurfer.play();
-            playNowSrc = src;
-        });
-
-
     });
 
     //Кнопка воспроизведения

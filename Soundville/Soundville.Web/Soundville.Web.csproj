@@ -52,8 +52,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="kasthack.VKSharp">
-      <HintPath>..\packages\kasthack.vksharp.0.5.13.29907\lib\net45\kasthack.VKSharp.dll</HintPath>
+    <Reference Include="kasthack.VKSharp, Version=0.5.13.42512, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\kasthack.vksharp.0.5.13.42512\lib\net45\kasthack.VKSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>

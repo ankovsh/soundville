@@ -7,7 +7,6 @@
 @section Scripts
 {
     <script src="~/Scripts/Custom/Player.js"></script>
-    <script src="http://www.wavesurfer.fm/dist/wavesurfer.min.js"></script>
 }
 
 <div class="form-container">
@@ -48,9 +47,11 @@
     <hr/>
 
     <div class="player">
-        <div id="wave"></div>
-        @*<div id="trackInfo">
+        <div id="trackInfo">
             <div id="error"></div>
+            <div id="duration">0:00</div>
+            <div id="current">0:00</div>
+            <div id="progress"></div>
         </div>
         <div class="bar">
             <a id="pl" href="#" title="Play">
@@ -63,6 +64,7 @@
                     <div id="pause" class="butIcon"></div>
                 </div>
             </a>
+            <div class="playing-song"></div>
         </div>
         <div class="range">
             <div id="vol"></div>
@@ -73,7 +75,7 @@
             <div id="valNumb">
                 <div id="val"></div>
             </div>
-        </div>*@
+        </div>
     </div>
     <div class="playL">
         <ul>
@@ -81,14 +83,12 @@
                 foreach (var song in Model.Songs)
                 {
                     <li>
-                        <a class="play-song"></a>
-                        <a href="#" class="playlist-song">
-                            <span class="song-artist">@song.Song.Artist - </span>
-                            <span class="song-title">@song.Song.Title</span>
-                        </a>
-                        <audio preload="none">
-                            <source src="@song.SongUrl"/>
+                        <a class="song-link">@song.Song.Artist - @song.Song.Title</a>
+                        <audio class="audio-song" preload="none">
+                            <source src="@song.SongUrl" />
                         </audio>
+                        <span class="span-artist" artist="@song.Song.Artist"></span>
+                        <span class="span-title" title="@song.Song.Title"></span>
                     </li>
                     <hr/>
                 }
