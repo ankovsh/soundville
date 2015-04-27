@@ -53,6 +53,7 @@ namespace Soundville.Web.Controllers
                 var newImageName = Guid.NewGuid() + imageExtension;
                 var imagePath = Path.Combine(Server.MapPath(ImageConstants.StationAvatarDir), newImageName);
                 model.Image.SaveAs(imagePath);
+                model.Status = StationStatus.Created;
                 _stationPresentationService.Save(model, newImageName, User.Identity.Name);
                 return RedirectToAction("Index", "Home");
             }
@@ -106,7 +107,10 @@ namespace Soundville.Web.Controllers
 
         public ActionResult StartStation(int id)
         {
+            _stationPresentationService.SaveStationStatus(id, StationStatus.InProcess);
+
             StartStream(id);
+
             return Redirect(
                             Url.RouteUrl("DefaultApi",
                             new

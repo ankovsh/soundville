@@ -1,35 +1,47 @@
-﻿@model Soundville.Presentation.Models.Stations.StationListModel
+﻿@using Soundville.Infrastructure.Constants
+@model Soundville.Presentation.Models.Stations.StationListModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="form-container">
-
-    @{
-        foreach (var station in Model.Stations)
-        {
-            <div class="wrap-station">
-                <div class="station-info">
-                    @{
-            string imageSrc;
-            if (station.ImageFileName != null)
-            {
-                imageSrc = ViewBag.PartialImageUrl + station.ImageFileName;
-            }
-            else
-            {
-                imageSrc = @ViewBag.DefaultImageSrc;
-            }
+@{
+    foreach (var station in Model.Stations)
+    {
+        <div class="wrap-station">
+            <div class="station-info">
+                @{
+                    string imageSrc;
+                    if (station.ImageFileName != null)
+                    {
+                        imageSrc = ViewBag.PartialImageUrl + station.ImageFileName;
                     }
-                    <img class="station-avatar" src=@imageSrc alt="" />
-                    <a class="station-name" href="@Url.Action("ViewStation", "Station", new {id = station.Id})"><h3 class="search-station-name">@station.Name</h3></a>
-                </div>
+                    else
+                    {
+                        imageSrc = @ViewBag.DefaultImageSrc;
+                    }
+                }
+                <img class="station-avatar" src=@imageSrc alt=""/>
+                <a class="station-name" href="@Url.Action("ViewStation", "Station", new {id = station.Id})">
+                    <h3 class="search-station-name">@station.Name</h3></a>
             </div>
-            <hr />
-        }
+            @if (station.Status == StationStatus.InProcess)
+            { 
+                <div class="buttons">
+                    <div class="broadcast-wrap">
+                        <a id="brcasting" href="@Url.RouteUrl("DefaultApi", new {httproute = "", controller = "Stations", id = station.Id})" title="Broadcasting" target="_blank">
+                            <div class="butMin">
+                                <div id="broadcasting" class="butIconMin"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+        <hr />
     }
-
+}
 </div>
 
 

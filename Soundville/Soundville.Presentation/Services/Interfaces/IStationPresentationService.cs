@@ -1,4 +1,5 @@
-﻿using Soundville.Presentation.Models.Stations;
+﻿using Soundville.Infrastructure.Constants;
+using Soundville.Presentation.Models.Stations;
 
 namespace Soundville.Presentation.Services.Interfaces
 {
@@ -13,5 +14,6 @@ namespace Soundville.Presentation.Services.Interfaces
         bool IsOwner(int stationId, string userEmail);
         void SaveSubscriber(int stationId, string userEmail);
         StationListModel GetSignedStationsModel(string userEmail);
+        void SaveStationStatus(int stationId, StationStatus status);
     }
 }

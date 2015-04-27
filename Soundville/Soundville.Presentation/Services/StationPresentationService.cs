@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Soundville.Domain.Models;
 using Soundville.Domain.Services.Interfaces;
+using Soundville.Infrastructure.Constants;
 using Soundville.Presentation.Models.Stations;
 using Soundville.Presentation.Services.Interfaces;
 
@@ -40,6 +41,7 @@ namespace Soundville.Presentation.Services
             station.Name = model.Name;
             station.ImageFileName = newImageName;
             station.UserId = _userDomainService.GetByEmail(userEmail).Id;
+            station.Status = model.Status;
             
             _stationDomainService.Save(station);
         }
@@ -104,6 +106,14 @@ namespace Soundville.Presentation.Services
             var model = new StationListModel(stations);
 
             return model;
+        }
+
+        public void SaveStationStatus(int stationId, StationStatus status)
+        {
+            var station = _stationDomainService.GetStationById(stationId);
+            station.Status = status;
+
+            _stationDomainService.Save(station);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Soundville.Domain.Models;
+using Soundville.Infrastructure.Constants;
 
 namespace Soundville.Presentation.Models.Stations
 {
@@ -11,7 +12,9 @@ namespace Soundville.Presentation.Models.Stations
         [StringLength(100)]
         public string Name { get; set; }
 
-        public string ImageFileName { get; set; } 
+        public string ImageFileName { get; set; }
+
+        public StationStatus Status { get; set; }
 
         public StationItem()
         {
@@ -22,6 +25,7 @@ namespace Soundville.Presentation.Models.Stations
             Id = station.Id;
             Name = station.Name;
             ImageFileName = station.ImageFileName;
+            Status = station.Status;
         }
     }
 }

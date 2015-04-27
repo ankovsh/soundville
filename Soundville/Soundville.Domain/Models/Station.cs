@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Soundville.Domain.Models.Interfaces;
+using Soundville.Infrastructure.Constants;
 
 namespace Soundville.Domain.Models
 {
@@ -12,5 +13,6 @@ namespace Soundville.Domain.Models
         public virtual User User { get; set; }
         public virtual IList<StationSong> StationSongs { get; set; }
         public virtual IList<User> Subscribers { get; set; }
+        public virtual  StationStatus Status { get; set; }
     }
 }

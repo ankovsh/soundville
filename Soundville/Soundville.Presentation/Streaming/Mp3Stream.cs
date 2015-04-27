@@ -118,6 +118,7 @@ namespace Soundville.Presentation.Streaming
                         if (_indexCount > 10)
                         {
                             _playbackState = StreamingPlaybackState.Stopped;
+                            _mp3Stream.Read(buffer, 0, buffer.Length);
                         }
                     }
                     else
