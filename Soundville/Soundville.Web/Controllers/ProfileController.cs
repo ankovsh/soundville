@@ -23,11 +23,10 @@ namespace Soundville.Web.Controllers
         public ActionResult Edit()
         {
             ProfileEditModel model = _profilePresentationService.GetProfileEditModel(User.Identity.Name);
-            if (model.ImageFileName.IsNullOrEmpty())
-            {
-                ViewBag.ImageSrc = "/Content/Images/male-default-avatar.png";
-            }
-            ViewBag.ImageSrc = Path.Combine(ImageConstants.AvatarUrl, model.ImageFileName);
+            ViewBag.ImageSrc = model.ImageFileName.IsNullOrEmpty()
+                ? "/Content/Images/male-default-avatar.png"
+                : Path.Combine(ImageConstants.AvatarUrl, model.ImageFileName);
+            
             return View(model);
         }
 
