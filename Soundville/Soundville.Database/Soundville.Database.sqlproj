@@ -71,6 +71,7 @@
   <ItemGroup>
     <None Include="localdb.publish.xml" />
     <None Include="appharbor.publish.xml" />
+    <None Include="gearhost.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
