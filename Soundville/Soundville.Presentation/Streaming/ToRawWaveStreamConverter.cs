@@ -4,7 +4,6 @@ using Soundville.Domain.Models;
 using Soundville.Domain.Services;
 using Soundville.Domain.Services.Interfaces;
 using Soundville.Infrastructure.Constants;
-using Soundville.Infrastructure.WindsorCastle;
 
 namespace Soundville.Presentation.Streaming
 {
@@ -23,7 +22,7 @@ namespace Soundville.Presentation.Streaming
 
         public ToRawWaveStreamConverter(Mp3Stream mp3Stream, int streamId, string songDirPath, WaveFormat newFormat)
         {
-            _stationDomainService = /*IoC.ContainerInstance.Resolve<IStationDomainService>();*/new StationDomainService();
+            _stationDomainService = new StationDomainService();
             _stationSongDomainService = new StationSongDomainService();
             this.streamId = streamId;
             position = 1;
@@ -50,9 +49,6 @@ namespace Soundville.Presentation.Streaming
                     {
                         if (StreamingPlaybackState.Stopped == mp3Stream.Status)
                         {
-                            /*waveFormatConversionStream.Close();
-                            mp3Stream.ResetLastSongByteCount();*/
-                            
                             var station = _stationDomainService.GetStationById(streamId);
                             station.Status = StationStatus.Finished;
                             _stationDomainService.Save(station);

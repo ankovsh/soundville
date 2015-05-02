@@ -54,6 +54,11 @@ namespace Soundville.Presentation.Streaming
                 {
                     Byte[] bytes;
                     if (_sleepCount > 20) return;
+                    if (_status == StreamingPlaybackState.Stopped)
+                    {
+                        return;
+                    }
+
                     lock (_queue)
                     {
                         if (_queue.Count == 0 || _status == StreamingPlaybackState.Paused)
