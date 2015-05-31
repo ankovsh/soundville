@@ -77,5 +77,16 @@ namespace Soundville.Web.Controllers
 
             return null;
         }
+
+        public JsonResult Vote(int stationSongId, int value)
+        {
+            string errors = _songPresentationService.Vote(stationSongId, value, User.Identity.Name);
+            if (errors != null)
+            {
+                return Json(new { hasErrors = true, errorMessage = errors });
+            }
+
+            return Json(new { hasErrors = false });
+        }
     }
 }

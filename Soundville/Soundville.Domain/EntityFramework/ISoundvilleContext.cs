@@ -15,6 +15,7 @@ namespace Soundville.Domain.EntityFramework
         DbSet<Station> Stations { get; set; }
         DbSet<Song> Songs { get; set; }
         DbSet<StationSong> StationSongs { get; set; }
+        DbSet<Vote> Votes { get; set; }
 
         #region Standart DbContext
         Database Database { get; }

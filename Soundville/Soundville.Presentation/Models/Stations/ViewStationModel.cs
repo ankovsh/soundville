@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Soundville.Presentation.Models.Stations
 {
@@ -10,7 +11,7 @@ namespace Soundville.Presentation.Models.Stations
         public ViewStationModel(StationItem station, IList<StationSongItem> songs)
         {
             Station = station;
-            Songs = songs;
+            Songs = songs.OrderBy(x => x.Position).ToList();
         }
     }
 }

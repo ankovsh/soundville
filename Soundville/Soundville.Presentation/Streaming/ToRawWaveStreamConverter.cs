@@ -49,7 +49,7 @@ namespace Soundville.Presentation.Streaming
                     {
                         if (StreamingPlaybackState.Stopped == mp3Stream.Status)
                         {
-                            var station = _stationDomainService.GetStationById(streamId);
+                            var station = _stationDomainService.GetById(streamId);
                             station.Status = StationStatus.Finished;
                             _stationDomainService.Save(station);
                         }

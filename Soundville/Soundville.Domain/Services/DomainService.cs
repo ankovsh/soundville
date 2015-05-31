@@ -78,5 +78,10 @@ namespace Soundville.Domain.Services
             Context.Set<TModel>().Remove(model);
             Context.SaveChanges();
         }
+
+        public void SaveChanges()
+        {
+            Context.SaveChanges();
+        }
     }
 }

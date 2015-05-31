@@ -1,4 +1,5 @@
-﻿@model Soundville.Presentation.Models.Stations.ViewStationModel
+﻿@using Soundville.Infrastructure.Constants
+@model Soundville.Presentation.Models.Stations.ViewStationModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,6 +8,7 @@
 @section Scripts
 {
     <script src="~/Scripts/Custom/Player.js"></script>
+    <script src="~/Scripts/Custom/Voting.js"></script>
 }
 
 <div class="form-container">
@@ -85,11 +87,20 @@
                     <li>
                         <a class="song-link">@song.Song.Artist - @song.Song.Title</a>
                         <audio class="audio-song" preload="none">
-                            <source src="@song.SongUrl" />
+                            <source src="@song.SongUrl"/>
                         </audio>
                         <span class="span-artist" artist="@song.Song.Artist"></span>
                         <span class="span-title" title="@song.Song.Title"></span>
                     </li>
+                    if (Model.Station.Status == StationStatus.Created)
+                    {
+                        <span class="up-vote" data-song-id="@song.Id">&#9650;</span>
+                    }
+                    <span class="vote-value">@song.VoteSum</span>
+                    if (Model.Station.Status == StationStatus.Created)
+                    {
+                        <span class="down-vote" data-song-id="@song.Id">&#9660;</span>
+                    }
                     <hr/>
                 }
             }

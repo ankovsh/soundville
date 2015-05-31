@@ -9,5 +9,6 @@ namespace Soundville.Domain.Services.Interfaces
         int GetLastSongPosition(int stationId);
         StationSong GetByPosition(int stationId, int position);
         void Save(StationSong stationSong);
+        bool IsExist(int stationSongId);
     }
 }

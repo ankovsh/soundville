@@ -11,6 +11,7 @@ namespace Soundville.Domain.EntityFramework
         public DbSet<Station> Stations { get; set; }
         public DbSet<Song> Songs { get; set; }
         public DbSet<StationSong> StationSongs { get; set; }
+        public DbSet<Vote> Votes { get; set; }
 
         public SoundvilleContext()
             : base("SoundvilleContext")

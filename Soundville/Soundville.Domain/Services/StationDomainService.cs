@@ -18,11 +18,6 @@ namespace Soundville.Domain.Services
         {
         }
 
-        public Station GetStationById(int id)
-        {
-            return Context.Stations.SingleOrDefault(x => x.Id == id);
-        }
-
         public IList<Station> GetAllStationsByUser(string userEmail)
         {
             return Context.Stations.Where(x => x.User.Email == userEmail).ToList();

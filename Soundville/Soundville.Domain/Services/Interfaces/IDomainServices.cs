@@ -12,5 +12,6 @@ namespace Soundville.Domain.Services.Interfaces
         void Delete(int id);
         void Delete(IList<int> ids);
         void Delete(TModel model);
+        void SaveChanges();
     }
 }

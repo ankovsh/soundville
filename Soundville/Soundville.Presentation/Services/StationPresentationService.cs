@@ -25,7 +25,7 @@ namespace Soundville.Presentation.Services
         public StationEditModel GetStationEditModel(int? id)
         {
             var station = id.HasValue
-                ? _stationDomainService.GetStationById(id.Value)
+                ? _stationDomainService.GetById(id.Value)
                 : new Station();
 
             var model = new StationEditModel(station);
@@ -35,7 +35,7 @@ namespace Soundville.Presentation.Services
         public void Save(StationEditModel model, string newImageName, string userEmail)
         {
             var station = model.Id.HasValue
-                ?_stationDomainService.GetStationById(model.Id.Value)
+                ? _stationDomainService.GetById(model.Id.Value)
                 : new Station();
 
             station.Name = model.Name;
@@ -56,7 +56,7 @@ namespace Soundville.Presentation.Services
 
         public ViewStationModel GetViewStationModel(int stationId)
         {
-            var station = _stationDomainService.GetStationById(stationId);
+            var station = _stationDomainService.GetById(stationId);
             var stationItem = new StationItem(station);
 
             var stationSongs = _stationSongDomainService.GetAllStationSongByStation(station.Id);
@@ -95,7 +95,7 @@ namespace Soundville.Presentation.Services
         public void SaveSubscriber(int stationId, string userEmail)
         {
             var user = _userDomainService.GetByEmail(userEmail);
-            var station = _stationDomainService.GetStationById(stationId);
+            var station = _stationDomainService.GetById(stationId);
             station.Subscribers.Add(user);
             _stationDomainService.Save(station);
         }
@@ -110,7 +110,7 @@ namespace Soundville.Presentation.Services
 
         public void SaveStationStatus(int stationId, StationStatus status)
         {
-            var station = _stationDomainService.GetStationById(stationId);
+            var station = _stationDomainService.GetById(stationId);
             station.Status = status;
 
             _stationDomainService.Save(station);

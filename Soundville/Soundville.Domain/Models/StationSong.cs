@@ -1,4 +1,5 @@
-﻿using Soundville.Domain.Models.Interfaces;
+﻿using System.Collections.Generic;
+using Soundville.Domain.Models.Interfaces;
 
 namespace Soundville.Domain.Models
 {
@@ -13,5 +14,6 @@ namespace Soundville.Domain.Models
         public string FileName { get; set; }
         public int Duration { get; set; }
         public int Position { get; set; }
+        public virtual IList<Vote> Votes { get; set; }
     }
 }

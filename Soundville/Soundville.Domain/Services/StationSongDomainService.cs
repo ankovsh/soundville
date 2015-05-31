@@ -44,5 +44,10 @@ namespace Soundville.Domain.Services
 
             Context.SaveChanges();
         }
+
+        public bool IsExist(int stationSongId)
+        {
+            return Context.StationSongs.Any(x => x.Id == stationSongId);
+        }
     }
 }
