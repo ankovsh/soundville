@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>dbf79e08e2ceaa4c69ac37a48c00d7b400</TargetDatabaseName>
+    <DeployScriptFileName>Soundville.Database.sql</DeployScriptFileName>
+    <TargetConnectionString>Data Source=f79e08e2-ceaa-4c69-ac37-a48c00d7b400.sqlserver.sequelizer.com;User ID=rufhcesgelanjjsd;Pooling=False</TargetConnectionString>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+  </PropertyGroup>
+</Project>

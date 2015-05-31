@@ -9,7 +9,7 @@
     @using (Html.BeginForm("Edit", "Station", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
     {
         @Html.HiddenFor(m => m.Id)
-        
+
         <h3>Complete Information About You Station</h3>
         <hr />
         @Html.ValidationSummary("", new { @class = "text-danger" })

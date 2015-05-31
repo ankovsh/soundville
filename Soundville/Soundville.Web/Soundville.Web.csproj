@@ -252,7 +252,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -260,14 +259,15 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
-    <None Include="Views\Home\About.cshtml" />
-    <None Include="Views\Home\GetInTouch.cshtml" />
-    <None Include="Views\Profile\Edit.cshtml" />
-    <None Include="Views\StationSong\SearchPage.cshtml" />
-    <None Include="Views\Station\Edit.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\GetInTouch.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\StationSong\SearchPage.cshtml" />
     <Content Include="Views\Station\StationList.cshtml" />
     <Content Include="Views\Station\SearchStations.cshtml" />
-    <None Include="Views\Station\ViewStation.cshtml" />
+    <Content Include="Views\Station\Edit.cshtml" />
+    <Content Include="Views\Station\ViewStation.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
