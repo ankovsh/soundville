@@ -372,7 +372,10 @@ hr {
 }
 
 .add-song-btn, .play-song {
-    padding: 25px 20px 5px 20px;
+    color: black !important;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 16px 0 17px;
     margin-right: 10px;
     float: right;
     box-shadow: 0 1px rgba(255,255,255,.2) inset, 0 3px 5px rgba(0,1,6,.5), 0 0 1px 1px rgba(0,1,6,.2);

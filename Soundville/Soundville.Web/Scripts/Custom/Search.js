@@ -24,9 +24,12 @@
                                            .attr("title", items[i].Title);
                     li.append(artist);
                     li.append(title);
-                    var add = $("<a>").addClass("add-song-btn")
-                                      .attr("data-id", items[i].Id)
-                                      .attr("data-owner-id", items[i].OwnerId);
+                    var add = $("<a>")
+                        .addClass("add-song-btn")
+                        .attr("data-id", items[i].Id)
+                        .attr("data-owner-id", items[i].OwnerId)
+                        .html("&darr;");
+
                     li.append(add);
                     var hr = $("<hr/>");
                     $("#search-result").append(hr);
