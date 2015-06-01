@@ -10,7 +10,7 @@ namespace Soundville.Presentation.Services.Interfaces
         StationListModel GetMyStationsModel(string userEmail);
         MySearchStationsModel GetSearchStationsModel();
         MySearchStationsModel GetSearchStationsModelByName(string name);
-        ViewStationModel GetViewStationModel(int stationId);
+        ViewStationModel GetViewStationModel(int stationId, string email);
         bool IsOwner(int stationId, string userEmail);
         void SaveSubscriber(int stationId, string userEmail);
         StationListModel GetSignedStationsModel(string userEmail);

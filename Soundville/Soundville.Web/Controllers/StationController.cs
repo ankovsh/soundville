@@ -75,7 +75,7 @@ namespace Soundville.Web.Controllers
         [HttpGet]
         public ActionResult ViewStation(int id)
         {   
-            var model = _stationPresentationService.GetViewStationModel(id);
+            var model = _stationPresentationService.GetViewStationModel(id, User.Identity.Name);
             ViewBag.Title = model.Station.Name;
             ViewBag.DefaultImageSrc = "/Content/Images/male-default-avatar.png";
             ViewBag.PartialImageUrl = ImageConstants.StationAvatarUrl + "/";

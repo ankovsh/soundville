@@ -15,5 +15,11 @@ namespace Soundville.Domain.Services
         {
             return Context.Votes.Any(x => x.StationSongId == stationSongId && x.UserId == userId);
         }
+
+        public Vote GetVoteBySongId(int songId, string email)
+        {
+            return Context.Votes.SingleOrDefault(x => x.User.Email == email 
+                                                && x.StationSongId == songId);
+        }
     }
 }

@@ -354,10 +354,10 @@ hr {
 }
 
 #search-song {
-    width: 90%;
+    width: 105%;
     position: inherit;
     top: 30px;
-    left: 50%;
+    left: 40%;
 }
 
 .song-link:hover {
@@ -637,9 +637,14 @@ h3.search-station-name:hover {
 	width: 40%;
     height: 768px;
 	position: absolute;
-	left: 50%;
+	left: 48%;
 	top: 450px;
 	margin-left: -240px;
+}
+
+#list-station {
+    width: 47%;
+    height: 600px;
 }
 	
 .playL ul {
@@ -753,4 +758,27 @@ h3.search-station-name:hover {
 
 .ui-slider-vertical .ui-slider-range-max {
 	top: 0;
+}
+
+#vote {
+    float: right;
+    margin-right: 10px;
+}
+
+.up-vote:hover {
+    color: #228b22;
+    cursor: pointer;
+}
+
+.down-vote:hover {
+    color: #a52a2a;
+    cursor: pointer;
+}
+
+.up-vote.voted {
+    color: #228b22;
+}
+
+.down-vote.voted {
+    color: #a52a2a;
 }

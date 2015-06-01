@@ -13,13 +13,15 @@ namespace Soundville.Presentation.Services
         private readonly IUserDomainService _userDomainService;
         private readonly IStationSongDomainService _stationSongDomainService;
         private readonly ISongDomainService _songDomainService;
+        private readonly IVoteDomainService _voteDomainService;
 
-        public StationPresentationService(IStationDomainService stationDomainService, IUserDomainService userDomainService, IStationSongDomainService stationSongDomainService, ISongDomainService songDomainService)
+        public StationPresentationService(IStationDomainService stationDomainService, IUserDomainService userDomainService, IStationSongDomainService stationSongDomainService, ISongDomainService songDomainService, IVoteDomainService voteDomainService)
         {
             _stationDomainService = stationDomainService;
             _userDomainService = userDomainService;
             _stationSongDomainService = stationSongDomainService;
             _songDomainService = songDomainService;
+            _voteDomainService = voteDomainService;
         }
 
         public StationEditModel GetStationEditModel(int? id)
@@ -54,17 +56,19 @@ namespace Soundville.Presentation.Services
             return model;
         }
 
-        public ViewStationModel GetViewStationModel(int stationId)
+        public ViewStationModel GetViewStationModel(int stationId, string email)
         {
             var station = _stationDomainService.GetById(stationId);
             var stationItem = new StationItem(station);
 
             var stationSongs = _stationSongDomainService.GetAllStationSongByStation(station.Id);
+
             var stationSongItems = new List<StationSongItem>();
             foreach (var stationSong in stationSongs)
             {
                 stationSong.Song = _songDomainService.GetSongById(stationSong.SongId);
-                stationSongItems.Add(new StationSongItem(stationSong));
+                var vote = _voteDomainService.GetVoteBySongId(stationSong.Id, email);
+                stationSongItems.Add(new StationSongItem(stationSong, vote));
             }
 
             var model = new ViewStationModel(stationItem, stationSongItems);

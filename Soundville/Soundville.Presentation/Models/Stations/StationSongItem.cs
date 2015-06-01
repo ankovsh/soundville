@@ -15,8 +15,10 @@ namespace Soundville.Presentation.Models.Stations
         public int Duration { get; set; }
         public int VoteSum { get; set; }
         public int Position { get; set; }
+        public bool IsVoted { get; set; }
+        public int VoteValue { get; set; }
 
-        public StationSongItem(StationSong stationSong)
+        public StationSongItem(StationSong stationSong, Vote vote)
         {
             Song = new SongItem(stationSong.Song);
             Id = stationSong.Id;
@@ -25,6 +27,12 @@ namespace Soundville.Presentation.Models.Stations
             Duration = stationSong.Duration;
             VoteSum = stationSong.Votes.IsNullOrEmpty() ? 0 : stationSong.Votes.Sum(x => x.Value);
             Position = stationSong.Position;
+
+            if (vote != null)
+            {
+                IsVoted = true;
+                VoteValue = vote.Value;
+            }
         }
     }
 }
